@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Question and plan — Grok Build</title>
+    <link rel="stylesheet" href="../design-system/tokens.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      button:focus-visible, a:focus-visible, select:focus-visible, textarea:focus-visible, input:focus-visible {
+        outline: var(--focus-ring-width) solid var(--focus);
+        outline-offset: var(--focus-ring-offset);
+      }
+      @keyframes task-pulse { 50% { opacity: 0.4; } }
+      .task-live { animation: task-pulse var(--duration-slow) var(--ease) infinite; }
+      @media (prefers-reduced-motion: reduce) { .task-live { animation: none; } }
+    </style>
+  </head>
+  <body class="m-0 min-h-screen flex bg-[var(--desk)] font-[var(--font-ui)] text-[var(--text)] text-[length:var(--text-body)] leading-[var(--leading-body)] antialiased">
+    <aside class="w-full min-w-[280px] h-dvh flex flex-col bg-[var(--bg)]">
+      <header class="h-10 shrink-0 flex items-center justify-between px-[var(--space-3)] border-b border-[var(--border)]">
+        <div class="flex items-center gap-[var(--space-2)] min-w-0">
+          <span class="text-[length:var(--text-ui)] font-[var(--weight-medium)] tracking-wide">◆ GROK BUILD</span>
+          <span class="text-[10px] leading-none px-[var(--space-2)] py-[3px] rounded-[var(--radius-pill)] border border-[var(--border-strong)] text-[var(--text-faint)]">unofficial</span>
+        </div>
+        <div class="flex items-center gap-[var(--space-1)]">
+          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]" title="Switch to light theme" aria-label="Switch to light theme"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.2 3.2l1.1 1.1M11.7 11.7l1.1 1.1M3.2 12.8l1.1-1.1M11.7 4.3l1.1-1.1"/></svg></button>
+          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]" title="New session" aria-label="New session"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg></button>
+          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]" title="Session history" aria-label="Session history"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M8 5v3.5l2 1.5"/></svg></button>
+          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]" title="Rewind to an earlier prompt" aria-label="Rewind"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8H2l3-3.5"/><path d="M3.5 8a4.5 4.5 0 1 0-1.2-3"/></svg></button>
+          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]" title="Hide thinking" aria-label="Toggle thinking"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2.5 9 6l3.5.2L10 8.5 11 12 8 10l-3 2 1-3.5-2.5-2.3L7 6z"/></svg></button>
+          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]" title="More" aria-label="More"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="3.5" cy="8" r=".75" fill="currentColor"/><circle cx="8" cy="8" r=".75" fill="currentColor"/><circle cx="12.5" cy="8" r=".75" fill="currentColor"/></svg></button>
+        </div>
+      </header>
+
+      <div class="h-7 shrink-0 flex items-center justify-between gap-[var(--space-2)] px-[var(--space-3)] border-b border-[var(--border)] text-[length:var(--text-meta)] text-[var(--text-muted)]">
+        <div class="flex items-center gap-[var(--space-2)] min-w-0">
+          <span class="size-1.5 rounded-[var(--radius-pill)] bg-[var(--warning)]"></span>
+          <span>waiting for you</span>
+          <span class="truncate">Plan the prefix fix</span>
+        </div>
+        <span class="tabular-nums">ctx 22%</span>
+      </div>
+
+      <div class="flex-1 min-h-0 overflow-y-auto px-[var(--space-3)] py-[var(--space-4)]">
+        <article class="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--bg-raised)] p-[var(--space-4)]">
+          <p class="m-0 text-[length:var(--text-ui)] font-[var(--weight-medium)]">Question 1 of 2</p>
+          <p class="mt-[var(--space-3)] mb-[var(--space-3)] text-[length:var(--text-ui)]">Where should learned Always-allow prefixes live?</p>
+          <div class="flex flex-col gap-[var(--space-2)]">
+            <label class="flex gap-[var(--space-2)] items-start rounded-[var(--radius-sm)] border border-[var(--accent)] bg-[var(--accent-subtle)] px-[var(--space-3)] py-[var(--space-2)]">
+              <input type="radio" name="q" checked class="mt-1" />
+              <span>
+                <span class="block text-[length:var(--text-ui)]">This session only</span>
+                <span class="block text-[length:var(--text-meta)] text-[var(--text-muted)]">Forget when the agent restarts. Matches today’s gate.</span>
+              </span>
+            </label>
+            <label class="flex gap-[var(--space-2)] items-start rounded-[var(--radius-sm)] border border-[var(--border)] px-[var(--space-3)] py-[var(--space-2)] hover:bg-[var(--bg-hover)]">
+              <input type="radio" name="q" class="mt-1" />
+              <span>
+                <span class="block text-[length:var(--text-ui)]">Workspace file</span>
+                <span class="block text-[length:var(--text-meta)] text-[var(--text-muted)]">Write a small allow-list next to the repo so Salim can review it.</span>
+              </span>
+            </label>
+            <label class="flex gap-[var(--space-2)] items-start rounded-[var(--radius-sm)] border border-[var(--border)] px-[var(--space-3)] py-[var(--space-2)] hover:bg-[var(--bg-hover)]">
+              <input type="radio" name="q" class="mt-1" />
+              <span>
+                <span class="block text-[length:var(--text-ui)]">User config.toml</span>
+                <span class="block text-[length:var(--text-meta)] text-[var(--text-muted)]">Keep it with MCP and model defaults under ~/.grok.</span>
+              </span>
+            </label>
+          </div>
+          <label class="block mt-[var(--space-3)] text-[length:var(--text-meta)] text-[var(--text-muted)]">Other…</label>
+          <input class="w-full h-8 mt-[var(--space-1)] px-[var(--space-3)] rounded-[var(--radius-sm)] bg-[var(--bg-inset)] border border-[var(--border)] text-[length:var(--text-ui)]" placeholder="Add a note for Grok" />
+          <div class="mt-[var(--space-3)] flex gap-[var(--space-2)]">
+            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] text-[length:var(--text-ui)] text-[var(--btn-disabled-fg)] opacity-[var(--btn-disabled-opacity)] cursor-[var(--btn-disabled-cursor)]" disabled>Back</button>
+            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] text-[length:var(--text-body)] font-[var(--weight-medium)] hover:bg-[var(--btn-primary-hover)]">Next</button>
+            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] text-[length:var(--text-ui)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]">Skip</button>
+          </div>
+        </article>
+      </div>
+
+      <section class="shrink-0 mx-[var(--space-3)] mb-[var(--space-2)] rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--bg-raised)] z-[var(--z-dock)]">
+        <div class="flex items-center gap-[var(--space-2)] px-[var(--space-3)] py-[var(--space-2)]">
+          <span class="text-[length:var(--text-meta)] font-[var(--weight-medium)] tracking-wide">PLAN 3/7</span>
+          <div class="flex-1 h-0.5 rounded-[var(--radius-pill)] bg-[var(--bg-inset)]">
+            <div class="h-full w-[42%] rounded-[var(--radius-pill)] bg-[var(--accent)]"></div>
+          </div>
+          <span class="text-[length:var(--text-meta)] text-[var(--text-muted)] truncate">Patch checkCommand</span>
+          <button class="size-8 grid place-items-center text-[var(--text-muted)] hover:text-[var(--text)]" aria-label="Dismiss plan">×</button>
+        </div>
+        <ul class="m-0 px-[var(--space-3)] pb-[var(--space-3)] list-none text-[length:var(--text-ui)]">
+          <li class="py-[var(--space-1)] text-[var(--text-muted)]">✓ Read the current PermissionGate</li>
+          <li class="py-[var(--space-1)] text-[var(--text-muted)]">✓ Find Always-allow storage</li>
+          <li class="py-[var(--space-1)] flex items-center gap-[var(--space-2)]">
+            <span class="task-live size-1.5 rounded-[var(--radius-pill)] bg-[var(--accent)]"></span>
+            Patch checkCommand to remember prefixes
+          </li>
+          <li class="py-[var(--space-1)] text-[var(--text-muted)]">Add a unit case for npm test:*</li>
+          <li class="py-[var(--space-1)] text-[var(--text-muted)]">Run typecheck</li>
+          <li class="py-[var(--space-1)] text-[var(--text-muted)]">Update the tooltip copy</li>
+          <li class="py-[var(--space-1)] text-[var(--text-muted)]">Stop and wait for review</li>
+        </ul>
+      </section>
+
+      <form class="shrink-0 p-[var(--space-3)] pt-0" action="#">
+        <div class="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--bg-raised)] p-[var(--space-2)]">
+          <textarea rows="2" class="w-full resize-none bg-transparent border-0 p-[var(--space-2)] text-[length:var(--text-body)] placeholder:text-[var(--text-faint)] font-[var(--font-ui)]" placeholder="Queue a follow-up…"></textarea>
+          <div class="flex items-center gap-[var(--space-1)] px-[var(--space-1)] pb-[var(--space-1)] flex-wrap">
+            <button type="button" class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]" title="Attach image" aria-label="Attach image"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 8.5 4.5 11A2.2 2.2 0 1 0 7.6 14l5-5a2.8 2.8 0 0 0-4-4l-5.2 5.2"/></svg></button>
+            <select class="h-8 max-w-[4.8rem] bg-transparent text-[length:var(--text-meta)] text-[var(--text-muted)] border-0" aria-label="Permission mode"><option>Ask</option><option>Accept</option><option selected>Plan</option><option>⚠ Bypass</option></select>
+            <select class="h-8 max-w-[6.2rem] bg-transparent text-[length:var(--text-meta)] text-[var(--text-muted)] border-0" aria-label="Model"><option selected>grok-4.6</option></select>
+            <select class="h-8 max-w-[5.2rem] bg-transparent text-[length:var(--text-meta)] text-[var(--text-muted)] border-0" aria-label="Reasoning effort"><option>low</option><option selected>medium</option><option>high</option></select>
+            <button type="button" class="ml-auto h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] text-[length:var(--text-body)] font-[var(--weight-medium)] hover:bg-[var(--btn-primary-hover)]">Send</button>
+          </div>
+        </div>
+      </form>
+    </aside>
+
+  </body>
+</html>

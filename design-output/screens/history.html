@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>History — Grok Build</title>
+    <link rel="stylesheet" href="../design-system/tokens.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      button:focus-visible, a:focus-visible, select:focus-visible, textarea:focus-visible, input:focus-visible {
+        outline: var(--focus-ring-width) solid var(--focus);
+        outline-offset: var(--focus-ring-offset);
+      }
+    </style>
+  </head>
+  <body class="m-0 min-h-screen flex bg-[var(--desk)] font-[var(--font-ui)] text-[var(--text)] text-[length:var(--text-body)] leading-[var(--leading-body)] antialiased">
+    <aside class="w-full min-w-[280px] h-dvh flex flex-col bg-[var(--bg)] relative">
+      <div class="absolute inset-0 z-[var(--z-backdrop)] bg-[color-mix(in_srgb,var(--bg)_70%,transparent)]" aria-hidden="true"></div>
+
+      <header class="h-10 shrink-0 flex items-center justify-between px-[var(--space-3)] border-b border-[var(--border)] relative z-[var(--z-popover)]">
+        <div class="flex items-center gap-[var(--space-2)] min-w-0">
+          <span class="text-[length:var(--text-ui)] font-[var(--weight-medium)] tracking-wide">◆ GROK BUILD</span>
+          <span class="text-[10px] leading-none px-[var(--space-2)] py-[3px] rounded-[var(--radius-pill)] border border-[var(--border-strong)] text-[var(--text-faint)]">unofficial</span>
+        </div>
+        <div class="flex items-center gap-[var(--space-1)]">
+          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]" title="Switch to light theme" aria-label="Switch to light theme"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.2 3.2l1.1 1.1M11.7 11.7l1.1 1.1M3.2 12.8l1.1-1.1M11.7 4.3l1.1-1.1"/></svg></button>
+          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]" title="New session" aria-label="New session"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg></button>
+          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text)] bg-[var(--bg-hover)]" title="Session history" aria-label="Session history"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M8 5v3.5l2 1.5"/></svg></button>
+          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]" title="Rewind to an earlier prompt" aria-label="Rewind"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8H2l3-3.5"/><path d="M3.5 8a4.5 4.5 0 1 0-1.2-3"/></svg></button>
+          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]" title="Hide thinking" aria-label="Toggle thinking"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2.5 9 6l3.5.2L10 8.5 11 12 8 10l-3 2 1-3.5-2.5-2.3L7 6z"/></svg></button>
+          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]" title="More" aria-label="More"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="3.5" cy="8" r=".75" fill="currentColor"/><circle cx="8" cy="8" r=".75" fill="currentColor"/><circle cx="12.5" cy="8" r=".75" fill="currentColor"/></svg></button>
+        </div>
+      </header>
+
+      <div class="relative z-[var(--z-popover)] mx-[var(--space-3)] mt-[var(--space-2)] mb-[var(--space-3)] rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--bg-raised)] max-h-[calc(100vh-6rem)] overflow-y-auto">
+        <div class="p-[var(--space-3)] border-b border-[var(--border)]">
+          <p class="m-0 mb-[var(--space-2)] text-[length:var(--text-ui)] font-[var(--weight-medium)]">Session history</p>
+          <input type="search" value="perm" class="w-full h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] bg-[var(--bg-inset)] border border-[var(--border)] text-[length:var(--text-ui)]" placeholder="Search sessions" />
+        </div>
+        <ul class="m-0 p-0 list-none divide-y divide-[var(--border)]">
+          <li class="px-[var(--space-3)] py-[var(--space-2)]">
+            <div class="flex items-center gap-[var(--space-2)]">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[length:var(--text-ui)] truncate">Permission gate prefix <span class="text-[length:var(--text-meta)] text-[var(--accent)]">current</span></p>
+                <p class="m-0 text-[length:var(--text-meta)] text-[var(--text-faint)]">2 minutes ago</p>
+              </div>
+              <button class="min-h-8 px-[var(--space-2)] text-[length:var(--text-meta)] text-[var(--text-muted)] hover:text-[var(--text)]">rename</button>
+              <button class="min-h-8 px-[var(--space-2)] text-[length:var(--text-meta)] text-[var(--text-muted)] hover:text-[var(--danger)]">delete</button>
+            </div>
+          </li>
+          <li class="px-[var(--space-3)] py-[var(--space-2)] bg-[var(--bg-inset)]">
+            <p class="m-0 text-[length:var(--text-ui)]">Delete session “Old typecheck loop”?</p>
+            <div class="mt-[var(--space-2)] flex gap-[var(--space-2)]">
+              <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]" aria-label="Cancel">✕</button>
+              <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--danger)] hover:bg-[var(--btn-danger-hover)]" aria-label="Confirm delete">✓</button>
+            </div>
+          </li>
+          <li class="px-[var(--space-3)] py-[var(--space-2)]">
+            <div class="flex items-center gap-[var(--space-2)]">
+              <input class="min-w-0 flex-1 h-8 px-[var(--space-2)] rounded-[var(--radius-sm)] bg-[var(--bg)] border border-[var(--border-strong)] text-[length:var(--text-ui)]" value="Worktree apply dry-run" />
+              <button class="min-h-8 px-[var(--space-2)] text-[length:var(--text-meta)] text-[var(--accent)]">save</button>
+              <button class="min-h-8 px-[var(--space-2)] text-[length:var(--text-meta)] text-[var(--text-muted)]">cancel</button>
+            </div>
+            <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-meta)] text-[var(--text-faint)]">Yesterday</p>
+          </li>
+          <li class="px-[var(--space-3)] py-[var(--space-2)]">
+            <div class="flex items-center gap-[var(--space-2)]">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[length:var(--text-ui)] truncate">Empty first-run setup</p>
+                <p class="m-0 text-[length:var(--text-meta)] text-[var(--text-faint)]">Monday</p>
+              </div>
+              <button class="min-h-8 px-[var(--space-2)] text-[length:var(--text-meta)] text-[var(--text-muted)] hover:text-[var(--text)]">rename</button>
+              <button class="min-h-8 px-[var(--space-2)] text-[length:var(--text-meta)] text-[var(--text-muted)] hover:text-[var(--danger)]">delete</button>
+            </div>
+          </li>
+        </ul>
+
+        <div class="p-[var(--space-3)] border-t border-[var(--border)]">
+          <p class="m-0 mb-[var(--space-2)] text-[length:var(--text-ui)] font-[var(--weight-medium)]">Rewind &amp; worktree</p>
+          <p class="m-0 mb-[var(--space-3)] text-[length:var(--text-meta)] text-[var(--text-muted)]">Rewind restores the chat to that prompt. It does not undo already-applied file writes on disk.</p>
+          <ul class="m-0 mb-[var(--space-4)] p-0 list-none">
+            <li><button class="w-full text-left py-[var(--space-2)] text-[length:var(--text-ui)] hover:text-[var(--accent)]">Fix Always allow prefix <span class="text-[var(--text-faint)] text-[length:var(--text-meta)]">just now</span></button></li>
+            <li><button class="w-full text-left py-[var(--space-2)] text-[length:var(--text-ui)] hover:text-[var(--accent)]">Read permissions.ts <span class="text-[var(--text-faint)] text-[length:var(--text-meta)]">3 min</span></button></li>
+            <li><button class="w-full text-left py-[var(--space-2)] text-[length:var(--text-ui)] hover:text-[var(--accent)]">Session start <span class="text-[var(--text-faint)] text-[length:var(--text-meta)]">12 min</span></button></li>
+          </ul>
+          <label class="block text-[length:var(--text-meta)] text-[var(--text-muted)] mb-[var(--space-1)]">Worktree name</label>
+          <input class="w-full h-8 mb-[var(--space-3)] px-[var(--space-3)] rounded-[var(--radius-sm)] bg-[var(--bg-inset)] border border-[var(--border)] text-[length:var(--text-ui)]" value="perm-gate" />
+          <div class="flex flex-wrap gap-[var(--space-2)]">
+            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] text-[length:var(--text-ui)] hover:bg-[var(--btn-primary-hover)]">Create</button>
+            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] border border-[var(--btn-secondary-border)] text-[length:var(--text-ui)] hover:bg-[var(--btn-secondary-hover)]">Move session</button>
+            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] text-[length:var(--text-ui)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]">Open…</button>
+            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] text-[length:var(--text-ui)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]">Apply…</button>
+            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] text-[length:var(--text-ui)] text-[var(--danger)] hover:bg-[var(--btn-danger-hover)]">Remove…</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </body>
+</html>

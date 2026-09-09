@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grok Build unofficial — design canvas</title>
+    <link rel="stylesheet" href="design-system/tokens.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      a:focus-visible {
+        outline: var(--focus-ring-width) solid var(--focus);
+        outline-offset: var(--focus-ring-offset);
+      }
+    </style>
+  </head>
+  <body class="m-0 min-h-screen bg-[var(--bg)] text-[var(--text)] font-[var(--font-ui)] text-[length:var(--text-body)] leading-[var(--leading-body)] antialiased">
+    <main class="max-w-xl mx-auto px-[var(--space-5)] py-[var(--space-7)]">
+      <p class="m-0 text-[length:var(--text-meta)] tracking-wide text-[var(--text-faint)]">Grok Build unofficial</p>
+      <h1 class="mt-[var(--space-2)] mb-0 text-[length:var(--text-display)] leading-[var(--leading-display)] tracking-[var(--tracking-display)] font-[var(--weight-regular)]">Design canvas</h1>
+      <p class="mt-[var(--space-3)] mb-[var(--space-6)] text-[var(--text-muted)]">Visual only. The rail fills the window, like dragging the VS Code chat split. Floor is 280px. grok.com chat language. This is not the Svelte app Salim will ship.</p>
+      <ol class="m-0 p-0 list-none flex flex-col gap-[var(--space-4)]">
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/empty.html">Empty / first-run</a>
+          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Quiet invitation, kbd hints, CLI-missing setup card, disabled composer.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/working.html">Working</a>
+          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Task-type search icon in status, mixed SEARCH / READ / EDIT / RUN rows, Stop.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/approval.html">Approval</a>
+          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Write + command. Apply, Accept all, Run, Always allow, Reject, Never.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/diff-peek.html">Diff peek</a>
+          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Path opens the editor. Inline peek in chat. diff button is VS Code side-by-side.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/terminal.html">Terminal</a>
+          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">RUN live output, collapsed git status, failed smoke — all in the chat row.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/composer.html">Composer</a>
+          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Attach, permission list, model, effort, Send, slash overlay, queue, overflow menu.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/history.html">History</a>
+          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Search, rename, armed delete, rewind checkpoints, worktree Create / Move / Open / Apply / Remove.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/question-plan.html">Question + plan</a>
+          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Question card with Other… and Skip. Plan dock 3/7 above the composer.</p>
+        </li>
+      </ol>
+    </main>
+  </body>
+</html>

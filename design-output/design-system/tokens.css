@@ -1,0 +1,341 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   Grok Build unofficial — sidebar reskin tokens · single source of truth
+   grok.com chat language in a ~400px rail. Dark is default.
+   Layers: 1 fonts · 2 primitives · 3 tokens · 4 light overrides · 5 motion
+   Screens import this file only. Flat: hairlines, no shadows. Focus = outline.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* 1 ── Fonts — Fontsource via jsDelivr (OFL; production bundles woff2) ── */
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.2.5/400.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.2.5/500.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.2.5/400.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.2.5/500.css");
+
+/* 2 ── Primitives · raw values, no roles ──────────────────────────────── */
+:root {
+  /* Families */
+  --primitive-font-ui: "Geist Sans", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --primitive-font-code: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+
+  /* Type raws */
+  --primitive-size-11: 11px;
+  --primitive-size-12: 12px;
+  --primitive-size-13: 13px;
+  --primitive-size-22: 22px;
+  --primitive-lh-display: 1.25;
+  --primitive-lh-ui: 1.4;
+  --primitive-lh-body: 1.5;
+  --primitive-tracking-display: -0.02em;
+  --primitive-weight-regular: 400;
+  --primitive-weight-medium: 500;
+
+  /* Space raws — 8pt grid, 4px half-step */
+  --primitive-space-4: 4px;
+  --primitive-space-8: 8px;
+  --primitive-space-12: 12px;
+  --primitive-space-16: 16px;
+  --primitive-space-24: 24px;
+  --primitive-space-32: 32px;
+  --primitive-space-48: 48px;
+
+  /* Radius raws */
+  --primitive-radius-8: 8px;
+  --primitive-radius-12: 12px;
+  --primitive-radius-16: 16px;
+  --primitive-radius-999: 999px;
+
+  /* Icon raws */
+  --primitive-icon-size: 16px;
+  --primitive-icon-stroke: 1.5;
+
+  /* Motion raws */
+  --primitive-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --primitive-duration-1: 120ms;
+  --primitive-duration-2: 200ms;
+  --primitive-duration-3: 280ms;
+
+  /* Z raws */
+  --primitive-z-dock: 20;
+  --primitive-z-popover: 40;
+  --primitive-z-modal: 50;
+
+  /* Dark surfaces — slight-cool greys (grok.com product dark canvas) */
+  --primitive-surface-0: #1e1f22;
+  --primitive-surface-1: #26262b;
+  --primitive-surface-2: #2a2b31;
+  --primitive-surface-3: #2e2f36;
+  --primitive-surface-4: #34353c;
+
+  /* Dark hairlines */
+  --primitive-line-1: #32333a;
+  --primitive-line-2: #3d3e46;
+
+  /* Dark ink ramp */
+  --primitive-ink-1: #ececec;
+  --primitive-ink-2: #a8a9b0;
+  --primitive-ink-3: #6e6f78;
+
+  /* Accent blue */
+  --primitive-blue-500: #1d9bf0;
+  --primitive-blue-400: #4ab0f5;
+  --primitive-blue-600: #1580cf;   /* pressed */
+  --primitive-blue-wash: rgba(29, 155, 240, 0.12);
+  --primitive-white: #ffffff;
+
+  /* Status — cool green / amber / shifted red, nothing neon */
+  --primitive-green-500: #4fb286;
+  --primitive-amber-500: #d9a040;
+  --primitive-red-500: #ef6f6c;
+
+  /* Diff — TUI-leaning, not GitHub-bright */
+  --primitive-diff-add-bg: #063806;
+  --primitive-diff-add-text: #7ed091;
+  --primitive-diff-add-bg-dim: #0d2b0d;
+  --primitive-diff-add-text-dim: #79a983;
+  --primitive-diff-del-bg: #420e14;
+  --primitive-diff-del-text: #f0a0a9;
+  --primitive-diff-del-bg-dim: #331215;
+  --primitive-diff-del-text-dim: #c69098;
+
+  /* Light raws — warm greys on the grok.com light canvas */
+  --primitive-lt-surface-0: #f9f8f7;
+  --primitive-lt-surface-1: #f1f0ed;
+  --primitive-lt-surface-2: #ebeae6;
+  --primitive-lt-surface-3: #e6e5e0;
+  --primitive-lt-surface-4: #deddd7;
+  --primitive-lt-line-1: #dddbd5;
+  --primitive-lt-line-2: #c7c5be;
+  --primitive-lt-ink-1: #1a1a1c;
+  --primitive-lt-ink-2: #5c5d63;
+  --primitive-lt-ink-3: #8a8b92;
+  --primitive-lt-blue-500: #0b7fd4;
+  --primitive-lt-blue-600: #0a6fb8;
+  --primitive-lt-blue-700: #09609f;
+  --primitive-lt-blue-wash: rgba(11, 127, 212, 0.10);
+  --primitive-lt-green-600: #1f7a55;
+  --primitive-lt-amber-700: #96660f;
+  --primitive-lt-red-600: #c43d35;
+  --primitive-lt-diff-add-bg: #dff3e1;
+  --primitive-lt-diff-add-text: #1f6b33;
+  --primitive-lt-diff-add-bg-dim: #eaf4ea;
+  --primitive-lt-diff-add-text-dim: #3e7a4b;
+  --primitive-lt-diff-del-bg: #f9e3e4;
+  --primitive-lt-diff-del-text: #a03a42;
+  --primitive-lt-diff-del-bg-dim: #f5ecec;
+  --primitive-lt-diff-del-text-dim: #96555c;
+}
+
+/* 3 ── Tokens · color (dark default) ──────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: var(--primitive-surface-0);          /* app canvas */
+  --bg-raised: var(--primitive-surface-1);   /* composer shell, cards */
+  --bg-inset: var(--primitive-surface-2);    /* code, input wells */
+  --bg-hover: var(--primitive-surface-3);    /* row hover */
+  --bg-active: var(--primitive-surface-4);   /* selected / pressed row */
+
+  --border: var(--primitive-line-1);         /* hairline */
+  --border-strong: var(--primitive-line-2);  /* inputs, ghost buttons */
+
+  --text: var(--primitive-ink-1);
+  --text-muted: var(--primitive-ink-2);      /* 7.0:1 on canvas — AA */
+  --text-faint: var(--primitive-ink-3);      /* 3.3:1 — decorative only */
+
+  --accent: var(--primitive-blue-500);       /* links, focus, primary Send */
+  --accent-fg: var(--primitive-white);
+  --accent-hover: var(--primitive-blue-400);
+  --accent-active: var(--primitive-blue-600);
+  --accent-subtle: var(--primitive-blue-wash);
+
+  --focus: var(--accent);
+  --success: var(--primitive-green-500);     /* duration timestamps may use */
+  --warning: var(--primitive-amber-500);
+  --danger: var(--primitive-red-500);        /* Stop */
+
+  --diff-add-bg: var(--primitive-diff-add-bg);
+  --diff-add-text: var(--primitive-diff-add-text);
+  --diff-add-bg-dim: var(--primitive-diff-add-bg-dim);
+  --diff-add-text-dim: var(--primitive-diff-add-text-dim);
+  --diff-del-bg: var(--primitive-diff-del-bg);
+  --diff-del-text: var(--primitive-diff-del-text);
+  --diff-del-bg-dim: var(--primitive-diff-del-bg-dim);
+  --diff-del-text-dim: var(--primitive-diff-del-text-dim);
+}
+
+/* 3b ── Tokens · type, space, radius, elevation, icon, motion, z, buttons */
+:root {
+  --font-ui: var(--primitive-font-ui);
+  --font-code: var(--primitive-font-code);
+
+  --text-display-size: var(--primitive-size-22);  /* empty state */
+  --text-display-lh: var(--primitive-lh-display);
+  --text-body-size: var(--primitive-size-13);     /* 13 / 1.5 */
+  --text-body-lh: var(--primitive-lh-body);
+  --text-chrome-size: var(--primitive-size-12);   /* 12 / 1.4 */
+  --text-chrome-lh: var(--primitive-lh-ui);
+  --text-meta-size: var(--primitive-size-11);     /* small / meta */
+  --text-meta-lh: var(--primitive-lh-ui);
+  --text-mono-size: var(--primitive-size-12);     /* paths, commands, diffs */
+  --text-mono-lh: var(--primitive-lh-body);
+
+  --weight-regular: var(--primitive-weight-regular); /* body + display voice */
+  --weight-medium: var(--primitive-weight-medium);   /* toolbar, status, verbs only */
+  --tracking-display: var(--primitive-tracking-display); /* display + empty headline */
+
+  /* Bands: header+status 1–2 · tool rows 2–3 · composer 3–4 · empty state 6–7 */
+  --space-1: var(--primitive-space-4);
+  --space-2: var(--primitive-space-8);
+  --space-3: var(--primitive-space-12);
+  --space-4: var(--primitive-space-16);
+  --space-5: var(--primitive-space-24);
+  --space-6: var(--primitive-space-32);
+  --space-7: var(--primitive-space-48);
+
+  --radius-sm: var(--primitive-radius-8);     /* chips, icon buttons, toolbar */
+  --radius-md: var(--primitive-radius-12);    /* cards, approval, questions */
+  --radius-lg: var(--primitive-radius-16);    /* composer shell only */
+  --radius-pill: var(--primitive-radius-999); /* unofficial tag, status dots only */
+
+  --elevation: none;                          /* hairlines only; no shadows */
+
+  --icon-size: var(--primitive-icon-size);
+  --icon-stroke: var(--primitive-icon-stroke);
+
+  --ease: var(--primitive-ease);
+  --duration-fast: var(--primitive-duration-1);  /* hover */
+  --duration: var(--primitive-duration-2);       /* enter */
+  --duration-slow: var(--primitive-duration-3);  /* exit / expand */
+  /* Only opacity and transform may animate. */
+
+  --z-dock: var(--primitive-z-dock);        /* sticky composer, status */
+  --z-popover: var(--primitive-z-popover);  /* menus */
+  --z-modal: var(--primitive-z-modal);      /* approval overlays */
+  --z-backdrop: 39;                         /* dim under popover; keep below --z-popover */
+  --desk: #161618;                          /* VS Code-like page around the 400px rail */
+
+  /* Focus — 2px accent ring as outline, never the browser default, never a shadow.
+     Apply: outline: var(--focus-ring-width) solid var(--focus);
+            outline-offset: var(--focus-ring-offset); */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+
+  /* Buttons — state map; screens compose from these, no component HTML here. */
+  --btn-min-tap: 32px;
+
+  --btn-primary-bg: var(--accent);
+  --btn-primary-fg: var(--accent-fg);
+  --btn-primary-border: transparent;
+  --btn-primary-bg-hover: var(--accent-hover);
+  --btn-primary-bg-active: var(--accent-active);
+
+  --btn-secondary-bg: transparent;
+  --btn-secondary-fg: var(--text);
+  --btn-secondary-border: var(--border-strong);
+  --btn-secondary-bg-hover: var(--bg-hover);
+  --btn-secondary-bg-active: var(--bg-active);
+
+  --btn-danger-bg: transparent;
+  --btn-danger-fg: var(--danger);
+  --btn-danger-border: color-mix(in srgb, var(--danger) 45%, transparent);
+  --btn-danger-bg-hover: color-mix(in srgb, var(--danger) 12%, transparent);
+  --btn-danger-bg-active: color-mix(in srgb, var(--danger) 18%, transparent);
+
+  /* Disabled stays visible: opacity + no pointer. */
+  --btn-disabled-opacity: 0.45;
+  --btn-disabled-cursor: not-allowed;  /* pair with pointer-events: none */
+  --btn-disabled-bg: var(--bg-inset);
+  --btn-disabled-fg: var(--text-faint);
+
+  /* Screen aliases — same values, shorter names used in the HTML canvas */
+  --text-display: var(--text-display-size);
+  --text-body: var(--text-body-size);
+  --text-ui: var(--text-chrome-size);
+  --text-meta: var(--text-meta-size);
+  --leading-display: var(--text-display-lh);
+  --leading-body: var(--text-body-lh);
+  --leading-ui: var(--text-chrome-lh);
+  --btn-primary-hover: var(--btn-primary-bg-hover);
+  --btn-secondary-hover: var(--btn-secondary-bg-hover);
+  --btn-danger-hover: var(--btn-danger-bg-hover);
+}
+
+/* 4 ── Light overrides · color tokens only ────────────────────────────── */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: var(--primitive-lt-surface-0);
+  --bg-raised: var(--primitive-lt-surface-1);
+  --bg-inset: var(--primitive-lt-surface-2);
+  --bg-hover: var(--primitive-lt-surface-3);
+  --bg-active: var(--primitive-lt-surface-4);
+
+  --border: var(--primitive-lt-line-1);
+  --border-strong: var(--primitive-lt-line-2);
+
+  --text: var(--primitive-lt-ink-1);
+  --text-muted: var(--primitive-lt-ink-2);   /* 6.2:1 on canvas — AA */
+  --text-faint: var(--primitive-lt-ink-3);   /* 3.2:1 — decorative only */
+
+  --accent: var(--primitive-lt-blue-500);    /* #1d9bf0 fails on light canvas */
+  --accent-fg: var(--primitive-white);
+  --accent-hover: var(--primitive-lt-blue-600);
+  --accent-active: var(--primitive-lt-blue-700);
+  --accent-subtle: var(--primitive-lt-blue-wash);
+
+  --focus: var(--accent);
+  --success: var(--primitive-lt-green-600);
+  --warning: var(--primitive-lt-amber-700);
+  --danger: var(--primitive-lt-red-600);
+
+  --diff-add-bg: var(--primitive-lt-diff-add-bg);
+  --diff-add-text: var(--primitive-lt-diff-add-text);
+  --diff-add-bg-dim: var(--primitive-lt-diff-add-bg-dim);
+  --diff-add-text-dim: var(--primitive-lt-diff-add-text-dim);
+  --diff-del-bg: var(--primitive-lt-diff-del-bg);
+  --diff-del-text: var(--primitive-lt-diff-del-text);
+  --diff-del-bg-dim: var(--primitive-lt-diff-del-bg-dim);
+  --diff-del-text-dim: var(--primitive-lt-diff-del-text-dim);
+}
+
+/* Additive Tailwind v4 alias — lives only in this file; plain browsers ignore it. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-raised: var(--bg-raised);
+  --color-bg-inset: var(--bg-inset);
+  --color-bg-hover: var(--bg-hover);
+  --color-bg-active: var(--bg-active);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --font-sans: var(--primitive-font-ui);
+  --font-mono: var(--primitive-font-code);
+}
+
+/* 5 ── Reduced motion: no animation ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration: 0ms;
+    --duration-slow: 0ms;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
