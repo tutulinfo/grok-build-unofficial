@@ -29,6 +29,80 @@ input:focus-visible {
   background: var(--bg);
 }
 
+.gb-shell {
+  display: flex;
+  height: 100dvh;
+  min-width: 280px;
+  background: var(--bg);
+}
+
+.gb-nav-rail {
+  flex-shrink: 0;
+  width: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 0 16px;
+  background: var(--bg);
+}
+
+.gb-nav-rail-ticks {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 8px;
+}
+
+.gb-nav-rail-ticks span {
+  display: block;
+  width: 14px;
+  height: 1px;
+  background: var(--text-faint);
+  opacity: 0.7;
+}
+
+.gb-nav-drawer {
+  flex-shrink: 0;
+  width: min(260px, 72vw);
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  padding: 12px 10px 16px;
+  overflow: auto;
+}
+
+.gb-nav-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: var(--text-ui);
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.gb-nav-item:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.gb-nav-item.is-current {
+  background: var(--bg-raised);
+  color: var(--text);
+}
+
+.gb-nav-label {
+  margin: 12px 10px 6px;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
 .gb-header {
   flex-shrink: 0;
   display: flex;
@@ -85,6 +159,7 @@ input:focus-visible {
 
 .gb-icon {
   box-sizing: border-box;
+  position: relative;
   width: 32px;
   height: 32px;
   display: flex;
@@ -106,6 +181,81 @@ input:focus-visible {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
+}
+
+.gb-tooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  z-index: var(--z-popover);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: var(--bg-inset);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: var(--weight-regular);
+  line-height: 1.2;
+  letter-spacing: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%) translateY(4px);
+  transition: opacity var(--duration-fast) var(--ease), transform var(--duration-fast) var(--ease);
+}
+
+.gb-tooltip kbd {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: var(--weight-regular);
+  color: var(--text-muted);
+}
+
+.gb-tooltip.is-end {
+  left: auto;
+  right: 0;
+  transform: translateY(4px);
+}
+
+.gb-tooltip.is-right {
+  top: 50%;
+  left: calc(100% + 8px);
+  transform: translateY(-50%) translateX(4px);
+}
+
+.gb-icon:hover .gb-tooltip,
+.gb-icon:focus-visible .gb-tooltip,
+.gb-icon.is-tip .gb-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.gb-icon:hover .gb-tooltip.is-end,
+.gb-icon:focus-visible .gb-tooltip.is-end,
+.gb-icon.is-tip .gb-tooltip.is-end {
+  transform: translateY(0);
+}
+
+.gb-icon:hover .gb-tooltip.is-right,
+.gb-icon:focus-visible .gb-tooltip.is-right,
+.gb-icon.is-tip .gb-tooltip.is-right {
+  transform: translateY(-50%) translateX(0);
+}
+
+.gb-icon:disabled:hover .gb-tooltip {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gb-tooltip {
+    transition: none;
+    transform: translateX(-50%);
+  }
+  .gb-tooltip.is-end {
+    transform: none;
+  }
 }
 
 .gb-icon:hover {
