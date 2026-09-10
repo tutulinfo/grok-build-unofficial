@@ -1,0 +1,448 @@
+/* Shared grok.com-chat chrome. Every screen links this after tokens.css. */
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.gb-page {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.gb-rail {
+  width: 100%;
+  min-width: 280px;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.gb-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 4px 16px;
+  box-sizing: border-box;
+}
+
+.gb-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  height: 32px;
+  font-size: var(--text-meta);
+  line-height: 32px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.gb-brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 32px;
+  line-height: 0;
+}
+
+.gb-brand-mark svg {
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+
+.gb-brand-tag {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  font-size: 10px;
+  line-height: 1;
+  color: var(--text-faint);
+  letter-spacing: 0;
+}
+
+.gb-header-actions {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  gap: 2px;
+}
+
+.gb-icon {
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-faint);
+  cursor: pointer;
+}
+
+.gb-icon svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.gb-icon:hover {
+  color: var(--text);
+  background: var(--bg-hover);
+}
+
+.gb-icon.is-active {
+  color: var(--text);
+  background: var(--bg-hover);
+}
+
+.gb-icon:disabled {
+  opacity: var(--btn-disabled-opacity);
+  cursor: var(--btn-disabled-cursor);
+}
+
+.gb-status {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0 var(--space-5) var(--space-2);
+  font-size: var(--text-meta);
+  color: var(--text-muted);
+}
+
+.gb-composer {
+  flex-shrink: 0;
+  margin: 0 var(--space-4) var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--bg-raised);
+}
+
+.gb-composer textarea,
+.gb-input-plain {
+  display: block;
+  width: 100%;
+  resize: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--text-body);
+}
+
+.gb-composer textarea::placeholder,
+.gb-input-plain::placeholder {
+  color: var(--text-muted);
+}
+
+.gb-toolbar {
+  display: flex;
+  align-items: center;
+  margin-top: var(--space-3);
+  gap: var(--space-2);
+}
+
+.gb-toolbar-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  min-width: 0;
+  flex: 1;
+}
+
+.gb-chip {
+  height: 32px;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--bg-inset);
+  color: var(--text-muted);
+  font-size: var(--text-ui);
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.gb-chip:hover {
+  color: var(--text);
+  background: var(--bg-hover);
+}
+
+.gb-chip.is-open,
+.gb-chip:active {
+  color: var(--text);
+  background: var(--bg-active);
+}
+
+.gb-chip:disabled {
+  opacity: var(--btn-disabled-opacity);
+  cursor: var(--btn-disabled-cursor);
+}
+
+.gb-send,
+.gb-stop {
+  width: var(--control-circle);
+  height: var(--control-circle);
+  margin-left: auto;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  padding: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.gb-send {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+.gb-send:hover {
+  background: var(--accent-hover);
+}
+
+.gb-send:disabled {
+  background: var(--bg-inset);
+  color: var(--text-faint);
+  cursor: var(--btn-disabled-cursor);
+}
+
+.gb-stop {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.gb-stop-mark {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--bg);
+}
+
+.gb-menu {
+  padding: 6px;
+  border-radius: 20px;
+  background: var(--bg-inset);
+}
+
+.gb-menu-item {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.gb-menu-item:hover {
+  background: var(--bg-hover);
+}
+
+.gb-menu-item.is-active,
+.gb-menu-item:active {
+  background: var(--bg-hover);
+}
+
+.gb-menu-item.is-checked svg:last-child {
+  margin-left: auto;
+}
+
+.gb-menu-item:disabled {
+  opacity: var(--btn-disabled-opacity);
+  cursor: var(--btn-disabled-cursor);
+}
+
+.gb-field {
+  width: 100%;
+  height: 32px;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--bg-inset);
+  color: var(--text);
+  font-size: var(--text-ui);
+  font-family: inherit;
+}
+
+.gb-field:hover {
+  background: var(--bg-hover);
+}
+
+.gb-field:focus {
+  background: var(--bg-hover);
+}
+
+.gb-user {
+  margin: 0 0 var(--space-6);
+  margin-left: auto;
+  max-width: 85%;
+  border-radius: var(--radius-lg);
+  background: var(--bg-raised);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-ui);
+}
+
+.gb-btn {
+  height: 32px;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--bg-inset);
+  color: var(--text-muted);
+  font-size: var(--text-ui);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.gb-btn:hover {
+  color: var(--text);
+  background: var(--bg-hover);
+}
+
+.gb-btn-primary {
+  height: 32px;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-size: var(--text-ui);
+  font-weight: var(--weight-medium);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.gb-btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.gb-btn-danger {
+  height: 32px;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--danger);
+  font-size: var(--text-ui);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.gb-btn-danger:hover {
+  background: var(--btn-danger-hover);
+}
+
+@keyframes gb-pulse {
+  50% { opacity: 0.45; }
+}
+
+.task-live {
+  animation: gb-pulse var(--duration-slow) var(--ease) infinite;
+}
+
+.gb-live {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 20px;
+  margin: 0 0 var(--space-5);
+  color: var(--text-muted);
+  font-size: var(--text-ui);
+}
+
+.gb-live-icons,
+.gb-live-copy {
+  position: relative;
+  display: block;
+}
+
+.gb-live-icons {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.gb-live-copy {
+  height: 20px;
+  min-width: 9rem;
+}
+
+.gb-live-icons > span,
+.gb-live-copy > span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  animation: gb-live-phase 8s var(--ease) infinite;
+}
+
+.gb-live-copy > span {
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.gb-live-icons > span:nth-child(1),
+.gb-live-copy > span:nth-child(1) { animation-delay: 0s; }
+.gb-live-icons > span:nth-child(2),
+.gb-live-copy > span:nth-child(2) { animation-delay: 2s; }
+.gb-live-icons > span:nth-child(3),
+.gb-live-copy > span:nth-child(3) { animation-delay: 4s; }
+.gb-live-icons > span:nth-child(4),
+.gb-live-copy > span:nth-child(4) { animation-delay: 6s; }
+
+@keyframes gb-live-phase {
+  0% { opacity: 0; transform: translateY(4px); }
+  6% { opacity: 1; transform: translateY(0); }
+  22% { opacity: 1; transform: translateY(0); }
+  28% { opacity: 0; transform: translateY(-4px); }
+  100% { opacity: 0; transform: translateY(-4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .task-live { animation: none; }
+  .gb-live-icons > span,
+  .gb-live-copy > span {
+    animation: none;
+    opacity: 0;
+  }
+  .gb-live-icons > span:last-child,
+  .gb-live-copy > span:last-child {
+    opacity: 1;
+    transform: none;
+  }
+}

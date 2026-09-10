@@ -59,16 +59,16 @@
   --primitive-z-popover: 40;
   --primitive-z-modal: 50;
 
-  /* Dark surfaces — slight-cool greys (grok.com product dark canvas) */
-  --primitive-surface-0: #1e1f22;
-  --primitive-surface-1: #26262b;
-  --primitive-surface-2: #2a2b31;
-  --primitive-surface-3: #2e2f36;
-  --primitive-surface-4: #34353c;
+  /* Dark surfaces — grok.com chat blacks */
+  --primitive-surface-0: #0c0c0c;
+  --primitive-surface-1: #1a1a1a;
+  --primitive-surface-2: #222222;
+  --primitive-surface-3: #2a2a2a;
+  --primitive-surface-4: #333333;
 
   /* Dark hairlines */
-  --primitive-line-1: #32333a;
-  --primitive-line-2: #3d3e46;
+  --primitive-line-1: #2a2a2a;
+  --primitive-line-2: #3a3a3a;
 
   /* Dark ink ramp */
   --primitive-ink-1: #ececec;
@@ -193,10 +193,11 @@
   --space-6: var(--primitive-space-32);
   --space-7: var(--primitive-space-48);
 
-  --radius-sm: var(--primitive-radius-8);     /* chips, icon buttons, toolbar */
-  --radius-md: var(--primitive-radius-12);    /* cards, approval, questions */
-  --radius-lg: var(--primitive-radius-16);    /* composer shell only */
-  --radius-pill: var(--primitive-radius-999); /* unofficial tag, status dots only */
+  --radius-sm: var(--primitive-radius-8);     /* chips, icon buttons */
+  --radius-md: var(--primitive-radius-12);    /* menus, cards */
+  --radius-lg: 28px;                         /* composer shell — grok.com pill */
+  --radius-pill: var(--primitive-radius-999); /* send/stop circles, tags */
+  --control-circle: 36px;                     /* Send / Stop */
 
   --elevation: none;                          /* hairlines only; no shadows */
 
@@ -213,7 +214,7 @@
   --z-popover: var(--primitive-z-popover);  /* menus */
   --z-modal: var(--primitive-z-modal);      /* approval overlays */
   --z-backdrop: 39;                         /* dim under popover; keep below --z-popover */
-  --desk: #161618;                          /* VS Code-like page around the 400px rail */
+  --desk: #0c0c0c;                          /* same black as the rail */
 
   /* Focus — 2px accent ring as outline, never the browser default, never a shadow.
      Apply: outline: var(--focus-ring-width) solid var(--focus);

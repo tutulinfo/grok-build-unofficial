@@ -5,108 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Empty / first-run — Grok Build</title>
     <link rel="stylesheet" href="../design-system/tokens.css" />
+    <link rel="stylesheet" href="../components/chrome.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-      button:focus-visible, a:focus-visible, select:focus-visible, textarea:focus-visible {
-        outline: var(--focus-ring-width) solid var(--focus);
-        outline-offset: var(--focus-ring-offset);
-      }
-    </style>
   </head>
-  <body class="m-0 min-h-screen flex bg-[var(--desk)] font-[var(--font-ui)] text-[var(--text)] text-[length:var(--text-body)] leading-[var(--leading-body)] antialiased">
-    <aside class="w-full min-w-[280px] h-dvh flex flex-col bg-[var(--bg)]">
-      <header class="h-10 shrink-0 flex items-center justify-between px-[var(--space-3)] border-b border-[var(--border)]">
-        <div class="flex items-center gap-[var(--space-2)] min-w-0">
-          <span class="text-[length:var(--text-ui)] font-[var(--weight-medium)] tracking-wide">◆ GROK BUILD</span>
-          <span class="text-[10px] leading-none px-[var(--space-2)] py-[3px] rounded-[var(--radius-pill)] border border-[var(--border-strong)] text-[var(--text-faint)]">unofficial</span>
+  <body class="m-0 min-h-screen bg-[var(--bg)] font-[var(--font-ui)] text-[var(--text)] text-[length:var(--text-body)] leading-[var(--leading-body)] antialiased">
+    <aside class="w-full min-w-[280px] h-dvh flex flex-col">
+      <header class="gb-header">
+        <div class="gb-brand">
+          <span class="gb-brand-mark" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M5 0.6 9.4 5 5 9.4 0.6 5Z" fill="currentColor"/></svg></span>
+          <span>GROK BUILD</span>
+          <span class="gb-brand-tag">unofficial</span>
         </div>
-        <div class="flex items-center gap-[var(--space-1)]">
-          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)] hover:text-[var(--text)]" title="Switch to light theme" aria-label="Switch to light theme">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.2 3.2l1.1 1.1M11.7 11.7l1.1 1.1M3.2 12.8l1.1-1.1M11.7 4.3l1.1-1.1"/></svg>
-          </button>
-          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)] hover:text-[var(--text)]" title="New session" aria-label="New session">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg>
-          </button>
-          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)] hover:text-[var(--text)]" title="Session history" aria-label="Session history">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M8 5v3.5l2 1.5"/></svg>
-          </button>
-          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)] hover:text-[var(--text)]" title="Rewind to an earlier prompt" aria-label="Rewind">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8H2l3-3.5"/><path d="M3.5 8a4.5 4.5 0 1 0-1.2-3"/></svg>
-          </button>
-          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)] hover:text-[var(--text)]" title="Hide thinking" aria-label="Toggle thinking">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2.5 9 6l3.5.2L10 8.5 11 12 8 10l-3 2 1-3.5-2.5-2.3L7 6z"/></svg>
-          </button>
-          <button class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)] hover:text-[var(--text)]" title="More" aria-label="More">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="3.5" cy="8" r=".75" fill="currentColor"/><circle cx="8" cy="8" r=".75" fill="currentColor"/><circle cx="12.5" cy="8" r=".75" fill="currentColor"/></svg>
-          </button>
+        <div class="gb-header-actions">
+          <button class="gb-icon" title="Switch to light theme" aria-label="Switch to light theme"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.2 3.2l1.1 1.1M11.7 11.7l1.1 1.1M3.2 12.8l1.1-1.1M11.7 4.3l1.1-1.1"/></svg></button>
+          <button class="gb-icon" title="New session" aria-label="New session"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg></button>
+          <button class="gb-icon" title="Session history" aria-label="Session history"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M8 5v3.5l2 1.5"/></svg></button>
+          <button class="gb-icon" title="Rewind to an earlier prompt" aria-label="Rewind"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h6.2a3.8 3.8 0 1 1-3.8 3.8"/><path d="M5.4 5.6 3 8l2.4 2.4"/></svg></button>
+          <button class="gb-icon" title="Hide thinking" aria-label="Toggle thinking"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2.5 9 6l3.5.2L10 8.5 11 12 8 10l-3 2 1-3.5-2.5-2.3L7 6z"/></svg></button>
+          <button class="gb-icon" title="More" aria-label="More"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="3.5" cy="8" r=".75" fill="currentColor"/><circle cx="8" cy="8" r=".75" fill="currentColor"/><circle cx="12.5" cy="8" r=".75" fill="currentColor"/></svg></button>
         </div>
       </header>
 
-      <div class="h-7 shrink-0 flex items-center justify-between gap-[var(--space-2)] px-[var(--space-3)] border-b border-[var(--border)] text-[length:var(--text-meta)] text-[var(--text-muted)]">
-        <div class="flex items-center gap-[var(--space-2)] min-w-0">
-          <span class="size-1.5 rounded-[var(--radius-pill)] bg-[var(--success)]"></span>
-          <span>ready</span>
-          <span class="italic text-[var(--text-faint)] truncate">new session</span>
-          <span class="text-[var(--text-faint)] truncate">grok-build-unofficial</span>
-        </div>
-        <div class="flex items-center gap-[var(--space-2)] shrink-0 tabular-nums">
-          <span>ctx 4%</span>
-          <span>12.4k</span>
-          <span>$0.000</span>
-          <span class="text-[var(--text-faint)]">0.2.117</span>
-        </div>
-      </div>
-
-      <div class="flex-1 min-h-0 overflow-y-auto px-[var(--space-4)] py-[var(--space-6)] flex flex-col">
-        <div class="flex-1 flex flex-col items-center justify-center text-center px-[var(--space-4)]">
-          <p class="m-0 text-[length:var(--text-display)] leading-[var(--leading-display)] tracking-[var(--tracking-display)] font-[var(--weight-regular)]">Ask anything about this workspace</p>
-          <p class="mt-[var(--space-3)] mb-0 text-[length:var(--text-meta)] text-[var(--text-muted)]">
-            <kbd class="font-[var(--font-code)]">Enter</kbd> send
-            <span class="mx-[var(--space-1)]">·</span>
-            <kbd class="font-[var(--font-code)]">Shift+Enter</kbd> newline
-            <span class="mx-[var(--space-1)]">·</span>
-            <kbd class="font-[var(--font-code)]">Ctrl+Shift+G</kbd> focus
-          </p>
-        </div>
-
-        <section class="mt-[var(--space-5)] rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--bg-raised)] p-[var(--space-4)]">
-          <p class="m-0 text-[length:var(--text-ui)] font-[var(--weight-medium)]">Grok CLI isn’t on PATH</p>
-          <p class="mt-[var(--space-2)] mb-0 text-[length:var(--text-meta)] text-[var(--text-muted)]">Unofficial wrapper. Install the official <span class="font-[var(--font-code)]">grok</span> binary and sign in before this sidebar can start a session.</p>
-          <pre class="mt-[var(--space-3)] mb-0 px-[var(--space-3)] py-[var(--space-2)] rounded-[var(--radius-sm)] bg-[var(--bg-inset)] text-[length:var(--text-meta)] font-[var(--font-code)] text-[var(--text-muted)] overflow-x-auto">grok: command not found</pre>
-          <div class="mt-[var(--space-3)] flex flex-wrap gap-[var(--space-2)]">
-            <a href="https://grok.x.ai" class="inline-flex h-8 items-center px-[var(--space-3)] rounded-[var(--radius-sm)] bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] text-[length:var(--text-ui)] no-underline hover:bg-[var(--btn-primary-hover)]">Open grok.x.ai</a>
-            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] border border-[var(--btn-secondary-border)] text-[length:var(--text-ui)] text-[var(--btn-secondary-fg)] hover:bg-[var(--btn-secondary-hover)]">Retry</button>
-            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] text-[length:var(--text-ui)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)] hover:text-[var(--text)]">View log</button>
+      <div class="flex-1 min-h-0 overflow-y-auto px-[var(--space-5)] flex flex-col">
+        <div class="flex-1"></div>
+        <p class="m-0 text-center text-[length:var(--text-display)] leading-[var(--leading-display)] tracking-[var(--tracking-display)] font-[var(--weight-regular)] text-[var(--text)]">Ask anything about this workspace</p>
+        <p class="mt-[var(--space-3)] mb-0 text-center text-[length:var(--text-meta)] text-[var(--text-muted)]">
+          <kbd class="font-[var(--font-code)]">Enter</kbd> send · <kbd class="font-[var(--font-code)]">Shift+Enter</kbd> newline
+        </p>
+        <div class="flex-1"></div>
+        <section class="mb-[var(--space-4)] rounded-[var(--radius-lg)] bg-[var(--bg-raised)] px-[var(--space-4)] py-[var(--space-3)]">
+          <p class="m-0 text-[length:var(--text-ui)] text-[var(--text-muted)]">Grok CLI isn’t on PATH</p>
+          <pre class="mt-[var(--space-2)] mb-[var(--space-3)] overflow-x-auto font-[var(--font-code)] text-[length:var(--text-meta)] text-[var(--text-muted)]">grok: command not found</pre>
+          <div class="flex flex-wrap gap-[var(--space-2)]">
+            <a href="https://grok.x.ai" class="gb-btn-primary inline-flex items-center no-underline">Open grok.x.ai</a>
+            <button type="button" class="gb-btn">Retry</button>
+            <button type="button" class="gb-btn">View log</button>
           </div>
         </section>
       </div>
 
-      <form class="shrink-0 p-[var(--space-3)] pt-[var(--space-2)]" action="#">
-        <div class="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--bg-raised)] p-[var(--space-2)]">
-          <textarea rows="2" disabled class="w-full resize-none bg-transparent border-0 p-[var(--space-2)] text-[length:var(--text-body)] text-[var(--text)] placeholder:text-[var(--text-faint)] font-[var(--font-ui)]" placeholder="Type a prompt once grok is on PATH"></textarea>
-          <div class="flex items-center gap-[var(--space-1)] px-[var(--space-1)] pb-[var(--space-1)] flex-wrap">
-            <button type="button" class="size-8 grid place-items-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]" title="Attach image" aria-label="Attach image">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 8.5 4.5 11A2.2 2.2 0 1 0 7.6 14l5-5a2.8 2.8 0 0 0-4-4l-5.2 5.2"/></svg>
-            </button>
-            <select class="h-8 max-w-[4.8rem] bg-transparent text-[length:var(--text-meta)] text-[var(--text-muted)] border-0" aria-label="Permission mode" disabled>
-              <option selected>Ask</option>
-              <option>Accept</option>
-              <option>Plan</option>
-              <option>⚠ Bypass</option>
-            </select>
-            <select class="h-8 max-w-[6.2rem] bg-transparent text-[length:var(--text-meta)] text-[var(--text-muted)] border-0" aria-label="Model" disabled>
-              <option selected>grok-4.6</option>
-            </select>
-            <select class="h-8 max-w-[5.2rem] bg-transparent text-[length:var(--text-meta)] text-[var(--text-muted)] border-0" aria-label="Reasoning effort" disabled>
-              <option>low</option>
-              <option selected>medium</option>
-              <option>high</option>
-            </select>
-            <button type="button" disabled class="ml-auto h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] bg-[var(--btn-disabled-bg)] text-[var(--btn-disabled-fg)] text-[length:var(--text-body)] font-[var(--weight-medium)] opacity-[var(--btn-disabled-opacity)] cursor-[var(--btn-disabled-cursor)]">Send</button>
+      <p class="shrink-0 px-[var(--space-5)] pb-[var(--space-2)] text-[length:var(--text-meta)] text-[var(--text-faint)]">ready · new session · grok-build-unofficial · ctx 4% · $0.000</p>
+
+      <form class="gb-composer" action="#">
+        <textarea rows="1" disabled placeholder="Ask anything"></textarea>
+        <div class="gb-toolbar">
+          <div class="gb-toolbar-left">
+            <button type="button" class="gb-icon" disabled title="Attach image" aria-label="Attach image"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3.5v9M3.5 8h9"/></svg></button>
+            <button type="button" class="gb-chip" disabled>Ask</button>
+            <button type="button" class="gb-chip" disabled>grok-4.6</button>
+            <button type="button" class="gb-chip" disabled>Fast <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
           </div>
+          <button type="button" class="gb-send" disabled aria-label="Send"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M8 12.5V3.5M4.5 7 8 3.5 11.5 7"/></svg></button>
         </div>
       </form>
     </aside>
-
   </body>
 </html>
