@@ -17,7 +17,7 @@
           <span class="gb-brand-tag">unofficial</span>
         </div>
         <div class="gb-header-actions">
-          <button class="gb-icon" title="Switch to light theme" aria-label="Switch to light theme"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.2 3.2l1.1 1.1M11.7 11.7l1.1 1.1M3.2 12.8l1.1-1.1M11.7 4.3l1.1-1.1"/></svg></button>
+          <button class="gb-icon" data-theme-toggle aria-label="Switch to light theme"><svg class="gb-theme-sun" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.2 3.2l1.1 1.1M11.7 11.7l1.1 1.1M3.2 12.8l1.1-1.1M11.7 4.3l1.1-1.1"/></svg><svg class="gb-theme-moon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.8 2.6a5.4 5.4 0 1 0 3.6 9.5 4.6 4.6 0 0 1-3.6-9.5z"/></svg><span class="gb-tooltip">Switch to light theme</span></button>
           <button class="gb-icon" title="New session" aria-label="New session"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg></button>
           <button class="gb-icon" title="Session history" aria-label="Session history"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M8 5v3.5l2 1.5"/></svg></button>
           <button class="gb-icon" title="Rewind to an earlier prompt" aria-label="Rewind"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></button>
@@ -26,47 +26,34 @@
         </div>
       </header>
 
-      <div class="h-7 shrink-0 flex items-center justify-between gap-[var(--space-2)] px-[var(--space-3)] border-b border-[var(--border)] text-[length:var(--text-meta)] text-[var(--text-muted)]">
-        <div class="flex items-center gap-[var(--space-2)] min-w-0">
-          <span class="size-1.5 rounded-[var(--radius-pill)] bg-[var(--success)]"></span>
-          <span>ready</span>
-          <span class="truncate">Permission gate prefix</span>
-        </div>
-        <div class="flex items-center gap-[var(--space-2)] shrink-0 tabular-nums"><span>ctx 41%</span><span>$0.058</span></div>
-      </div>
-
-      <div class="flex-1 min-h-0 overflow-y-auto px-[var(--space-3)] py-[var(--space-4)]">
-        <div class="flex items-center gap-[var(--space-2)] py-[var(--space-2)] text-[length:var(--text-ui)]">
-          <span class="text-[var(--text-muted)] shrink-0"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.5 12.5 12 4l1.5 1.5-8.5 8.5H3.5v-1.5z"/></svg></span>
-          <span class="w-14 shrink-0 font-[var(--weight-medium)] text-[length:var(--text-meta)] tracking-wide">EDIT</span>
+      <div class="flex-1 min-h-0 overflow-y-auto px-5 py-4">
+        <div class="flex items-center gap-2 text-[length:var(--text-ui)] text-[var(--text-muted)]">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.5 12.5 12 4l1.5 1.5-8.5 8.5H3.5v-1.5z"/></svg>
+          <span>EDIT</span>
           <a href="#" class="min-w-0 flex-1 truncate font-[var(--font-code)] text-[length:var(--text-meta)] text-[var(--accent)] no-underline hover:underline" title="Opens in VS Code editor">webview/components/ToolCard.svelte</a>
           <span class="text-[length:var(--text-meta)] text-[var(--success)]">+24 −11</span>
-          <button class="min-h-8 px-[var(--space-2)] text-[length:var(--text-meta)] text-[var(--text)] underline-offset-2 hover:underline" title="Opens VS Code side-by-side diff">diff</button>
-          <button class="min-h-8 px-[var(--space-2)] text-[length:var(--text-meta)] text-[var(--text-muted)] hover:text-[var(--text)]" title="Opens in VS Code editor">open</button>
+          <button class="gb-btn" type="button" title="Opens VS Code side-by-side diff">diff</button>
+          <button class="gb-btn" type="button" title="Opens in VS Code editor">open</button>
         </div>
-
-        <pre class="mt-[var(--space-1)] mb-[var(--space-4)] rounded-[var(--radius-sm)] bg-[var(--bg-inset)] p-[var(--space-2)] text-[length:var(--text-meta)] font-[var(--font-code)] leading-[1.45] overflow-auto max-h-72"><span class="text-[var(--text-faint)]">  88</span>   {#if row.kind === "edit"}
-<span class="bg-[var(--diff-del-bg)] text-[var(--diff-del-text)] block">-    &lt;div class="peek hidden"&gt;</span>
-<span class="bg-[var(--diff-add-bg)] text-[var(--diff-add-text)] block">+    &lt;div class="peek" class:open={peekOpen}&gt;</span>
-<span class="bg-[var(--diff-add-bg)] text-[var(--diff-add-text)] block">+      &lt;DiffView hunks={row.hunks} maxRows={8} /&gt;</span>
- <span class="text-[var(--text-faint)]">  91</span>       &lt;button
- <span class="text-[var(--text-faint)]">  92</span>         class="link"
-<span class="bg-[var(--diff-del-bg)] text-[var(--diff-del-text)] block">-        onclick={() =&gt; openDiff(row.path)}</span>
-<span class="bg-[var(--diff-add-bg)] text-[var(--diff-add-text)] block">+        title="Opens VS Code side-by-side diff"</span>
-<span class="bg-[var(--diff-add-bg)] text-[var(--diff-add-text)] block">+        onclick={() =&gt; openDiff(row.path)}</span>
- <span class="text-[var(--text-faint)]">  95</span>       &gt;diff&lt;/button&gt;
- <span class="text-[var(--text-faint)]">  96</span>     &lt;/div&gt;
- <span class="text-[var(--text-faint)]">  97</span>   {/if}</pre>
-
-        <div class="flex items-center gap-[var(--space-2)] py-[var(--space-2)] border-t border-[var(--border)] text-[length:var(--text-ui)]">
-          <span class="text-[var(--text-muted)] shrink-0"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.5 12.5 12 4l1.5 1.5-8.5 8.5H3.5v-1.5z"/></svg></span>
-          <span class="w-14 shrink-0 font-[var(--weight-medium)] text-[length:var(--text-meta)] tracking-wide">EDIT</span>
+        <pre class="gb-code">88   {#if row.kind === "edit"}
+<span class="gb-diff-del">-    &lt;div class="peek hidden"&gt;</span>
+<span class="gb-diff-add">+    &lt;div class="peek" class:open={peekOpen}&gt;</span>
+<span class="gb-diff-add">+      &lt;DiffView hunks={row.hunks} maxRows={8} /&gt;</span>
+91       &lt;button class="link"
+<span class="gb-diff-del">-        onclick={() =&gt; openDiff(row.path)}</span>
+<span class="gb-diff-add">+        title="Opens VS Code side-by-side diff"</span>
+<span class="gb-diff-add">+        onclick={() =&gt; openDiff(row.path)}</span>
+95       &gt;diff&lt;/button&gt;</pre>
+        <div class="flex items-center gap-2 mt-4 text-[length:var(--text-ui)] text-[var(--text-muted)]">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.5 12.5 12 4l1.5 1.5-8.5 8.5H3.5v-1.5z"/></svg>
+          <span>EDIT</span>
           <a href="#" class="min-w-0 flex-1 truncate font-[var(--font-code)] text-[length:var(--text-meta)] text-[var(--accent)] no-underline hover:underline" title="Opens in VS Code editor">src/host/fsBridge.ts</a>
           <span class="text-[length:var(--text-meta)] text-[var(--success)]">+3 −0</span>
-          <button class="min-h-8 px-[var(--space-2)] text-[length:var(--text-meta)] text-[var(--text-muted)] hover:text-[var(--text)]" title="Opens VS Code side-by-side diff">diff</button>
-          <button class="min-h-8 px-[var(--space-2)] text-[length:var(--text-meta)] text-[var(--text-muted)] hover:text-[var(--text)]" title="Opens in VS Code editor">open</button>
+          <button class="gb-btn" type="button" title="Opens VS Code side-by-side diff">diff</button>
+          <button class="gb-btn" type="button" title="Opens in VS Code editor">open</button>
         </div>
       </div>
+      <p class="gb-status">ready · Permission gate prefix · ctx 41% · $0.058</p>
 
       <form class="gb-composer" action="#">
         <textarea rows="1" placeholder="Ask anything"></textarea>
@@ -82,5 +69,6 @@
       </form>
     </aside>
 
+    <script src="../components/theme.js"></script>
   </body>
 </html>

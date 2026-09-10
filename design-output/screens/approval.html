@@ -17,7 +17,7 @@
           <span class="gb-brand-tag">unofficial</span>
         </div>
         <div class="gb-header-actions">
-          <button class="gb-icon" title="Switch to light theme" aria-label="Switch to light theme"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.2 3.2l1.1 1.1M11.7 11.7l1.1 1.1M3.2 12.8l1.1-1.1M11.7 4.3l1.1-1.1"/></svg></button>
+          <button class="gb-icon" data-theme-toggle aria-label="Switch to light theme"><svg class="gb-theme-sun" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.2 3.2l1.1 1.1M11.7 11.7l1.1 1.1M3.2 12.8l1.1-1.1M11.7 4.3l1.1-1.1"/></svg><svg class="gb-theme-moon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.8 2.6a5.4 5.4 0 1 0 3.6 9.5 4.6 4.6 0 0 1-3.6-9.5z"/></svg><span class="gb-tooltip">Switch to light theme</span></button>
           <button class="gb-icon" title="New session" aria-label="New session"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg></button>
           <button class="gb-icon" title="Session history" aria-label="Session history"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M8 5v3.5l2 1.5"/></svg></button>
           <button class="gb-icon" title="Rewind to an earlier prompt" aria-label="Rewind"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></button>
@@ -26,36 +26,32 @@
         </div>
       </header>
 
-      <div class="flex-1 min-h-0 overflow-y-auto px-[var(--space-5)] py-[var(--space-4)] flex flex-col gap-[var(--space-3)]">
-        <article class="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--bg-raised)] overflow-hidden" style="border-left: 2px solid var(--warning)">
-          <div class="px-[var(--space-3)] pt-[var(--space-3)]">
-            <p class="m-0 text-[length:var(--text-ui)] font-[var(--weight-medium)]">Write file</p>
-            <a href="#" class="mt-[var(--space-1)] inline-block font-[var(--font-code)] text-[length:var(--text-meta)] text-[var(--accent)] no-underline hover:underline" title="Opens in VS Code editor">src/host/permissions.ts</a>
-          </div>
-          <pre class="mx-[var(--space-3)] mt-[var(--space-3)] mb-0 max-h-40 overflow-auto rounded-[var(--radius-sm)] bg-[var(--bg-inset)] p-[var(--space-2)] text-[length:var(--text-meta)] font-[var(--font-code)] leading-[1.45]"> <span class="text-[var(--text-faint)]">114</span>   checkCommand(cmd: string) {
-<span class="block bg-[var(--diff-del-bg)] text-[var(--diff-del-text)]">-    return this.ask(cmd);</span>
-<span class="block bg-[var(--diff-add-bg)] text-[var(--diff-add-text)]">+    const prefix = commandPrefix(cmd);</span>
-<span class="block bg-[var(--diff-add-bg)] text-[var(--diff-add-text)]">+    if (this.learned.has(prefix)) return "allow";</span>
-<span class="block bg-[var(--diff-add-bg)] text-[var(--diff-add-text)]">+    return this.ask(cmd);</span>
- <span class="text-[var(--text-faint)]">118</span>   }</pre>
-          <div class="flex flex-wrap gap-[var(--space-2)] p-[var(--space-3)]">
-            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] text-[length:var(--text-body)] font-[var(--weight-medium)] hover:bg-[var(--btn-primary-hover)]">Apply</button>
-            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] border border-[var(--btn-secondary-border)] text-[length:var(--text-ui)] hover:bg-[var(--btn-secondary-hover)]" title="Remember writes for this session">Accept all edits</button>
-            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] text-[length:var(--text-ui)] text-[var(--btn-danger-fg)] hover:bg-[var(--btn-danger-hover)]">Reject</button>
+      <div class="flex-1 min-h-0 overflow-y-auto px-5 py-4 flex flex-col gap-4">
+        <article class="gb-card px-5 py-[18px]">
+          <p class="m-0 text-[length:var(--text-ui)]">Grok wants to write a file</p>
+          <a href="#" class="mt-1 inline-block font-[var(--font-code)] text-[length:var(--text-meta)] text-[var(--accent)] no-underline hover:underline" title="Opens in VS Code editor">src/host/permissions.ts</a>
+          <pre class="gb-code">114  checkCommand(cmd: string) {
+<span class="gb-diff-del">-    return this.ask(cmd);</span>
+<span class="gb-diff-add">+    const prefix = commandPrefix(cmd);</span>
+<span class="gb-diff-add">+    if (this.learned.has(prefix)) return "allow";</span>
+<span class="gb-diff-add">+    return this.ask(cmd);</span>
+118  }</pre>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <button class="gb-btn-primary" type="button">Apply</button>
+            <button class="gb-btn" type="button" title="Remember writes for this session">Accept all edits</button>
+            <button class="gb-btn-danger" type="button">Reject</button>
           </div>
         </article>
 
-        <article class="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--bg-raised)] overflow-hidden" style="border-left: 2px solid var(--warning)">
-          <div class="px-[var(--space-3)] pt-[var(--space-3)]">
-            <p class="m-0 text-[length:var(--text-ui)] font-[var(--weight-medium)]">Run command</p>
-            <p class="mt-[var(--space-2)] mb-0 font-[var(--font-code)] text-[length:var(--text-ui)]">$ npm test --filter permissions</p>
-            <p class="mt-[var(--space-1)] mb-0 text-[length:var(--text-meta)] text-[var(--text-faint)] font-[var(--font-code)]">D:\projects\grok-build-unofficial</p>
-          </div>
-          <div class="flex flex-wrap gap-[var(--space-2)] p-[var(--space-3)]">
-            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] text-[length:var(--text-ui)] hover:bg-[var(--btn-primary-hover)]">Run</button>
-            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] border border-[var(--btn-secondary-border)] text-[length:var(--text-ui)] hover:bg-[var(--btn-secondary-hover)]" title="Bash(npm test:*)">Always allow</button>
-            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] text-[length:var(--text-ui)] text-[var(--btn-danger-fg)] hover:bg-[var(--btn-danger-hover)]">Reject</button>
-            <button class="h-8 px-[var(--space-3)] rounded-[var(--radius-sm)] text-[length:var(--text-ui)] text-[var(--text-muted)] hover:bg-[var(--bg-hover)]">Never</button>
+        <article class="gb-card px-5 py-[18px]">
+          <p class="m-0 text-[length:var(--text-ui)]">Grok wants to run a command</p>
+          <p class="mt-2 mb-0 font-[var(--font-code)] text-[length:var(--text-ui)]">$ npm test --filter permissions</p>
+          <p class="mt-1 mb-0 text-[length:var(--text-meta)] text-[var(--text-muted)] font-[var(--font-code)]">D:\projects\grok-build-unofficial</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <button class="gb-btn-primary" type="button">Run</button>
+            <button class="gb-btn" type="button" title="Bash(npm test:*)">Always allow</button>
+            <button class="gb-btn-danger" type="button">Reject</button>
+            <button class="gb-btn" type="button">Never</button>
           </div>
         </article>
       </div>
@@ -75,5 +71,6 @@
       </form>
     </aside>
 
+    <script src="../components/theme.js"></script>
   </body>
 </html>

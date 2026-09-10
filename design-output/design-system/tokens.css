@@ -138,6 +138,7 @@
 
   --border: var(--primitive-line-1);         /* hairline */
   --border-strong: var(--primitive-line-2);  /* inputs, ghost buttons */
+  --hairline: color-mix(in srgb, var(--text) 14%, transparent);
 
   --text: var(--primitive-ink-1);
   --text-muted: var(--primitive-ink-2);      /* 7.0:1 on canvas — AA */
@@ -298,6 +299,7 @@
   --diff-del-text: var(--primitive-lt-diff-del-text);
   --diff-del-bg-dim: var(--primitive-lt-diff-del-bg-dim);
   --diff-del-text-dim: var(--primitive-lt-diff-del-text-dim);
+  --desk: var(--primitive-lt-surface-0);
 }
 
 /* Additive Tailwind v4 alias — lives only in this file; plain browsers ignore it. */
