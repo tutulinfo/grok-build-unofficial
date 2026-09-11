@@ -32,24 +32,40 @@
             Applied <a class="gb-path" href="#" title="Opens in VS Code editor">fsBridge.ts</a>
             <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
           </summary>
+          <div class="gb-gate-body">
+            <p class="m-0 mb-2 text-[12px] text-[var(--text-muted)]">Write applied this turn.</p>
+            <div class="gb-clip">
+              <pre><span class="gb-diff-add">+    return buf ?? fs.readFileSync(path, "utf8");</span></pre>
+            </div>
+          </div>
         </details>
         <details class="gb-gate">
           <summary>
             Always allow <span class="font-[var(--font-code)] text-[12px]">npm test:*</span>
             <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
           </summary>
+          <div class="gb-gate-body">
+            <p class="m-0 text-[13px]">Later commands matching <span class="font-[var(--font-code)] text-[12px]">npm test:*</span> run without asking, this session.</p>
+            <p class="m-0 mt-2 text-[12px] text-[var(--text-muted)] font-[var(--font-code)]">$ npm test --filter permissions</p>
+          </div>
         </details>
         <details class="gb-gate">
           <summary>
             Rejected write to <a class="gb-path" href="#" title="Opens in VS Code editor">secrets.env</a>
             <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
           </summary>
+          <div class="gb-gate-body">
+            <p class="m-0 text-[13px]">Write was not applied. File unchanged.</p>
+          </div>
         </details>
         <details class="gb-gate">
           <summary>
             Never allow <span class="font-[var(--font-code)] text-[12px]">rm:*</span>
             <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
           </summary>
+          <div class="gb-gate-body">
+            <p class="m-0 text-[13px]">This session will deny commands matching <span class="font-[var(--font-code)] text-[12px]">rm:*</span> without asking.</p>
+          </div>
         </details>
 
         <details class="gb-gate" open>
