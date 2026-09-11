@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../components/chrome.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="m-0 min-h-screen flex bg-[var(--desk)] font-[var(--font-ui)] text-[var(--text)] text-[length:var(--text-body)] leading-[var(--leading-body)] antialiased">
-    <aside class="w-full min-w-[280px] h-dvh flex flex-col bg-[var(--bg)]">
+  <body class="gb-page">
+    <aside class="gb-rail">
       <header class="gb-header">
         <div class="gb-brand">
           <span class="gb-brand-mark" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M5 0.6 9.4 5 5 9.4 0.6 5Z" fill="currentColor"/></svg></span>
@@ -26,7 +26,7 @@
         </div>
       </header>
 
-      <div class="flex-1 min-h-0 overflow-y-auto px-5 py-4">
+      <div class="gb-scroll px-4 py-5">
         <article class="gb-card px-5 py-[18px]">
           <p class="m-0 text-[length:var(--text-meta)] text-[var(--text-muted)]">Question 1 of 2</p>
           <p class="mt-3 mb-4 text-[length:var(--text-ui)]">Where should learned Always-allow prefixes live?</p>
@@ -89,9 +89,9 @@
         <div class="gb-toolbar">
           <div class="gb-toolbar-left">
             <button type="button" class="gb-icon" title="Attach image" aria-label="Attach image"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3.5v9M3.5 8h9"/></svg></button>
-            <button type="button" class="gb-chip">Plan</button>
-            <button type="button" class="gb-chip">grok-4.6</button>
-            <button type="button" class="gb-chip">Fast <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+            <button type="button" class="gb-chip gb-dd">Plan</button>
+            <button type="button" class="gb-chip gb-dd">Grok 4.6</button>
+            <button type="button" class="gb-chip gb-dd">Fast</button>
           </div>
           <button type="button" class="gb-send" aria-label="Send" title="Send"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M8 12.5V3.5M4.5 7 8 3.5 11.5 7"/></svg></button>
         </div>

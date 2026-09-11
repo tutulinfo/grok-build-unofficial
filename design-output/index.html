@@ -3,57 +3,57 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Grok Build unofficial — design canvas</title>
+    <title>Grok Build — presentation</title>
     <link rel="stylesheet" href="design-system/tokens.css" />
+    <link rel="stylesheet" href="components/chrome.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-      a:focus-visible {
-        outline: var(--focus-ring-width) solid var(--focus);
-        outline-offset: var(--focus-ring-offset);
-      }
-    </style>
   </head>
-  <body class="m-0 min-h-screen bg-[var(--bg)] text-[var(--text)] font-[var(--font-ui)] text-[length:var(--text-body)] leading-[var(--leading-body)] antialiased">
-    <main class="max-w-xl mx-auto px-[var(--space-5)] py-[var(--space-7)]">
-      <p class="m-0 text-[length:var(--text-meta)] tracking-wide text-[var(--text-faint)]">Grok Build unofficial</p>
-      <h1 class="mt-[var(--space-2)] mb-0 text-[length:var(--text-display)] leading-[var(--leading-display)] tracking-[var(--tracking-display)] font-[var(--weight-regular)]">Design canvas</h1>
-      <p class="mt-[var(--space-3)] mb-[var(--space-6)] text-[var(--text-muted)]">Visual only. grok.com chat surface: black field, pill composer, circular Send/Stop. Features stay. Start with Empty and Working. Resize the window like a VS Code split.</p>
-      <ol class="m-0 p-0 list-none flex flex-col gap-[var(--space-4)]">
+  <body class="gb-page" style="overflow:auto;height:auto;max-height:none">
+    <main class="max-w-xl mx-auto px-6 py-12">
+      <p class="m-0 text-[11px] tracking-wide text-[var(--text-faint)]">Grok Build unofficial · client walkthrough</p>
+      <h1 class="mt-3 mb-0 text-[22px] font-[400] tracking-[-0.02em]">Sidebar chat, grok.com feel</h1>
+      <p class="mt-3 mb-6 text-[14px] text-[var(--text-muted)] leading-[1.65]">Unofficial VS Code client for Grok Build CLI. Features stay. Tools collapse. File names open the editor. Sun toggles light.</p>
+      <p class="mb-8"><a class="gb-btn-primary inline-flex items-center no-underline" href="present.html">Presentation</a></p>
+      <ol class="m-0 p-0 list-none flex flex-col gap-5">
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/empty.html">Empty / first-run</a>
-          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Quiet invitation, kbd hints, CLI-missing setup card, disabled composer.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/empty.html">1 · First run</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">CLI missing. Setup card, composer disabled.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/working.html">Working</a>
-          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Live Thinking / Searching cycle, mixed tool rows, Stop.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/empty-ready.html">2 · Ready to ask</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">CLI on PATH. Empty field, Send live.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/working-busy.html">Working busy</a>
-          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Same session as the live sidebar: READ / LIST / SEARCH / SPAWN, Copy, Queue, Bypass, Stop circle.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/working.html">3 · First tools</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Working for 3s. Read, edit, run. Queue + Stop.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/approval.html">Approval</a>
-          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Write + command. Apply, Accept all, Run, Always allow, Reject, Never.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/working-busy.html">4 · Coding turn</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Full review: collapsed tools, terminal, diff, approvals.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/diff-peek.html">Diff peek</a>
-          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Path opens the editor. Inline peek in chat. diff button is VS Code side-by-side.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/approval.html">5 · Permissions</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Write file and run command. Apply, Always allow, Reject, Never.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/terminal.html">Terminal</a>
-          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">RUN live output, collapsed git status, failed smoke — all in the chat row.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/diff-peek.html">6 · Inspect edit</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Inline diff. Path opens VS Code.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/composer.html">Composer</a>
-          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Attach, permission list, model, effort, Send, slash overlay, queue, overflow menu.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/terminal.html">7 · Terminal</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Typecheck open, git collapsed, smoke failed.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/history.html">History</a>
-          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Left history drawer like grok.com. Search, rename, delete, rewind, worktree. Empty/Working show the collapsed rail.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/composer.html">8 · Permission menu</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Ask / Accept / Plan / Bypass. Queue banner. Overflow.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/question-plan.html">Question + plan</a>
-          <p class="m-0 mt-[var(--space-1)] text-[length:var(--text-ui)] text-[var(--text-muted)]">Question card with Other… and Skip. Plan dock 3/7 above the composer.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/question-plan.html">9 · Question + plan</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Question card, Other…, plan dock 3/7.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/history.html">10 · History</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Full-rail chats, rewind, worktree. Back returns to chat.</p>
         </li>
       </ol>
     </main>

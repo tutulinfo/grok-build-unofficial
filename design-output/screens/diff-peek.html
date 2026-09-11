@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../components/chrome.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="m-0 min-h-screen flex bg-[var(--desk)] font-[var(--font-ui)] text-[var(--text)] text-[length:var(--text-body)] leading-[var(--leading-body)] antialiased">
-    <aside class="w-full min-w-[280px] h-dvh flex flex-col bg-[var(--bg)]">
+  <body class="gb-page">
+    <aside class="gb-rail">
       <header class="gb-header">
         <div class="gb-brand">
           <span class="gb-brand-mark" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M5 0.6 9.4 5 5 9.4 0.6 5Z" fill="currentColor"/></svg></span>
@@ -26,32 +26,23 @@
         </div>
       </header>
 
-      <div class="flex-1 min-h-0 overflow-y-auto px-5 py-4">
-        <div class="flex items-center gap-2 text-[length:var(--text-ui)] text-[var(--text-muted)]">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.5 12.5 12 4l1.5 1.5-8.5 8.5H3.5v-1.5z"/></svg>
-          <span>EDIT</span>
-          <a href="#" class="min-w-0 flex-1 truncate font-[var(--font-code)] text-[length:var(--text-meta)] text-[var(--accent)] no-underline hover:underline" title="Opens in VS Code editor">webview/components/ToolCard.svelte</a>
-          <span class="text-[length:var(--text-meta)] text-[var(--success)]">+24 −11</span>
-          <button class="gb-btn" type="button" title="Opens VS Code side-by-side diff">diff</button>
-          <button class="gb-btn" type="button" title="Opens in VS Code editor">open</button>
-        </div>
-        <pre class="gb-code">88   {#if row.kind === "edit"}
-<span class="gb-diff-del">-    &lt;div class="peek hidden"&gt;</span>
+      <div class="gb-scroll px-4 py-5">
+        <details class="gb-acc" open>
+          <summary>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.5 12.5 12 4l1.5 1.5-8.5 8.5H3.5v-1.5z"/></svg>
+            Edited ToolCard.svelte
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+          <div class="gb-clip">
+            <pre><span class="gb-diff-del">-    &lt;div class="peek hidden"&gt;</span>
 <span class="gb-diff-add">+    &lt;div class="peek" class:open={peekOpen}&gt;</span>
-<span class="gb-diff-add">+      &lt;DiffView hunks={row.hunks} maxRows={8} /&gt;</span>
-91       &lt;button class="link"
-<span class="gb-diff-del">-        onclick={() =&gt; openDiff(row.path)}</span>
-<span class="gb-diff-add">+        title="Opens VS Code side-by-side diff"</span>
-<span class="gb-diff-add">+        onclick={() =&gt; openDiff(row.path)}</span>
-95       &gt;diff&lt;/button&gt;</pre>
-        <div class="flex items-center gap-2 mt-4 text-[length:var(--text-ui)] text-[var(--text-muted)]">
+<span class="gb-diff-add">+      &lt;DiffView hunks={row.hunks} maxRows={8} /&gt;</span></pre>
+          </div>
+        </details>
+        <a class="gb-summary" href="#" title="Opens in VS Code editor">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.5 12.5 12 4l1.5 1.5-8.5 8.5H3.5v-1.5z"/></svg>
-          <span>EDIT</span>
-          <a href="#" class="min-w-0 flex-1 truncate font-[var(--font-code)] text-[length:var(--text-meta)] text-[var(--accent)] no-underline hover:underline" title="Opens in VS Code editor">src/host/fsBridge.ts</a>
-          <span class="text-[length:var(--text-meta)] text-[var(--success)]">+3 −0</span>
-          <button class="gb-btn" type="button" title="Opens VS Code side-by-side diff">diff</button>
-          <button class="gb-btn" type="button" title="Opens in VS Code editor">open</button>
-        </div>
+          Edited fsBridge.ts
+        </a>
       </div>
       <p class="gb-status">ready · Permission gate prefix · ctx 41% · $0.058</p>
 
@@ -60,9 +51,9 @@
         <div class="gb-toolbar">
           <div class="gb-toolbar-left">
             <button type="button" class="gb-icon" title="Attach image" aria-label="Attach image"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3.5v9M3.5 8h9"/></svg></button>
-            <button type="button" class="gb-chip">Ask</button>
-            <button type="button" class="gb-chip">grok-4.6</button>
-            <button type="button" class="gb-chip">Fast <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+            <button type="button" class="gb-chip gb-dd">Ask</button>
+            <button type="button" class="gb-chip gb-dd">Grok 4.6</button>
+            <button type="button" class="gb-chip gb-dd">Fast</button>
           </div>
           <button type="button" class="gb-send" aria-label="Send" title="Send"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M8 12.5V3.5M4.5 7 8 3.5 11.5 7"/></svg></button>
         </div>

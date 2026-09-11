@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../components/chrome.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="m-0 min-h-screen flex bg-[var(--desk)] font-[var(--font-ui)] text-[var(--text)] text-[length:var(--text-body)] leading-[var(--leading-body)] antialiased">
-    <aside class="w-full min-w-[280px] h-dvh flex flex-col bg-[var(--bg)]">
+  <body class="gb-page">
+    <aside class="gb-rail">
       <header class="gb-header">
         <div class="gb-brand">
           <span class="gb-brand-mark" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M5 0.6 9.4 5 5 9.4 0.6 5Z" fill="currentColor"/></svg></span>
@@ -26,48 +26,39 @@
         </div>
       </header>
 
-      <div class="flex-1 min-h-0 overflow-y-auto px-5 py-4">
-        <div class="gb-live" aria-live="polite">
-          <span class="gb-live-icons" aria-hidden="true">
-            <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="3.5" width="11" height="9" rx="1"/><path d="M5 8h2l.8 2 1.4-4 1 2h.8"/></svg></span>
-            <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="3.5" width="11" height="9" rx="1"/><path d="M5 8h2l.8 2 1.4-4 1 2h.8"/></svg></span>
-            <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="3.5" width="11" height="9" rx="1"/><path d="M5 8h2l.8 2 1.4-4 1 2h.8"/></svg></span>
-            <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="3.5" width="11" height="9" rx="1"/><path d="M5 8h2l.8 2 1.4-4 1 2h.8"/></svg></span>
-          </span>
-          <span class="gb-live-copy">
-            <span>Using tools</span>
-            <span>Using tools</span>
-            <span>Using tools</span>
-            <span>Working for 3s</span>
-          </span>
-        </div>
-        <div class="flex items-center gap-2 text-[length:var(--text-ui)] text-[var(--text-muted)]">
-          <span>RUN</span>
-          <span class="min-w-0 flex-1 truncate font-[var(--font-code)] text-[length:var(--text-meta)]">$ npm run typecheck</span>
-          <span class="text-[length:var(--text-meta)] text-[var(--success)]">3.1s</span>
-        </div>
-        <pre class="gb-code">> svelte-check --tsconfig ./tsconfig.json
-Loading svelte-check in workspace: grok-build-unofficial
-Getting Svelte diagnostics...
-webview/components/ToolCard.svelte:204:12
-Warn: 'peekOpen' is assigned but never used.
-Checking...
-▊
-<button class="gb-btn mt-2" type="button">show all</button></pre>
-        <div class="flex items-center gap-2 mt-4 text-[length:var(--text-ui)] text-[var(--text-muted)]">
-          <button class="gb-icon" type="button" aria-label="Expand output" title="Expand output"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 6 3 3 3-3"/></svg></button>
-          <span>RUN</span>
-          <span class="min-w-0 flex-1 truncate font-[var(--font-code)] text-[length:var(--text-meta)]">$ git status</span>
-          <span class="text-[length:var(--text-meta)] text-[var(--success)]">0.4s</span>
-          <button class="gb-btn" type="button">show all</button>
-        </div>
-        <div class="flex items-center gap-2 mt-3 text-[length:var(--text-ui)] text-[var(--text-muted)]">
-          <button class="gb-icon" type="button" aria-label="Expand output" title="Expand output"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 6 3 3 3-3"/></svg></button>
-          <span>RUN</span>
-          <span class="min-w-0 flex-1 truncate font-[var(--font-code)] text-[length:var(--text-meta)]">$ npm run smoke</span>
-          <span class="text-[length:var(--text-meta)] text-[var(--danger)]">exit 1</span>
-          <button class="gb-btn-danger" type="button">show all</button>
-        </div>
+      <div class="gb-scroll px-4 py-5">
+        <details class="gb-acc" open>
+          <summary>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="3.5" width="11" height="9" rx="1"/><path d="M5 8h2l.8 2 1.4-4 1 2h.8"/></svg>
+            Running npm run typecheck
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+          <div class="gb-clip">
+            <pre>&gt; svelte-check --tsconfig ./tsconfig.json
+svelte-check found 0 errors and 0 warnings</pre>
+          </div>
+        </details>
+        <details class="gb-acc">
+          <summary>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="3.5" width="11" height="9" rx="1"/><path d="M5 8h2l.8 2 1.4-4 1 2h.8"/></svg>
+            Ran git status
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+          <div class="gb-clip">
+            <pre>On branch main
+nothing to commit, working tree clean</pre>
+          </div>
+        </details>
+        <details class="gb-acc">
+          <summary>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="3.5" width="11" height="9" rx="1"/><path d="M5 8h2l.8 2 1.4-4 1 2h.8"/></svg>
+            Running npm run smoke
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+          <div class="gb-clip">
+            <pre>error Command failed with exit code 1.</pre>
+          </div>
+        </details>
       </div>
       <p class="gb-status">working · Permission gate prefix · ctx 44% · $0.061</p>
 
@@ -76,9 +67,10 @@ Checking...
         <div class="gb-toolbar">
           <div class="gb-toolbar-left">
             <button type="button" class="gb-icon" title="Attach image" aria-label="Attach image"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3.5v9M3.5 8h9"/></svg></button>
-            <button type="button" class="gb-chip">Ask</button>
-            <button type="button" class="gb-chip">grok-4.6</button>
-            <button type="button" class="gb-chip">Fast <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+            <button type="button" class="gb-chip gb-dd">Ask</button>
+            <button type="button" class="gb-chip gb-dd">Grok 4.6</button>
+            <button type="button" class="gb-chip gb-dd">Fast</button>
+            <button type="button" class="gb-chip">Queue</button>
           </div>
           <button type="button" class="gb-stop" aria-label="Stop" title="Stop"><span class="gb-stop-mark"></span></button>
         </div>

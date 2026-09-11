@@ -1,35 +1,33 @@
 # Thinking — do not “normalize”
 
-- **Signature:** grok.com chat chrome in a VS Code rail. Black/warm-light field, 28px pill composer, 1px `--hairline`, circular Send (accent) and Stop (ink circle, square inside). Not x.ai marketing pills. Not a TUI screenshot.
-- **Features stay.** If grok.com has no Write-file card, still ship Apply / Accept all / Reject and Run / Always allow / Reject / Never. Restyle to `.gb-card`, do not delete.
-- **Live line ≠ tool rows.** The morphing Thinking / Searching / Using tools / Working for Ns is the grok.com status. SEARCH/READ/EDIT/RUN rows underneath are the coding-agent document. Both exist.
-- **Spacing break:** composer padding 18×20px and a tall empty “Ask anything” field. Do not crush it back to a 4px toolbar.
-- **Tooltips:** same hairline shell as the composer. Header `z-index` above the transcript so labels are not covered. No native `title` on those icons (double tooltip).
-- **Left history** is a drawer from the clock, not a permanent +/menu rail beside the chat.
-- **Type:** Geist Sans 400. Do not ship Universal Sans from cdn.grok.com. JetBrains Mono for paths and diffs.
-- **Motion:** opacity + translate only, 120/200ms, `--ease`. Reduced-motion kills the live cycle and tooltip slide.
-- **Unofficial:** diamond + “GROK BUILD” + unofficial tag. Never the grok.com logo.
+- **Feel:** grok.com chat in a VS Code rail — hairline pill composer, circular Send/Stop, quiet type (Geist 400, body `--text-muted`). Not a pixel copy of grok.com or of the official Grok VS Code tab.
+- **Tools:** Claude-style accordion. Default one line. Chevron means it opens. Filename is the open-in-editor target.
+- **Features stay.** Approvals, Queue (busy only), Bypass, Always allow, rewind, worktree — restyle, don’t delete. Don’t hide chips in a gear.
+- **History** is a full-width panel. A 260px drawer beside chat **breaks at ~400px**.
+- **Gutter:** transcript, status, composer all **16px**.
+- **Composer padding:** 12×14px, toolbar gap 10px. Do not return to a dense 4px bar.
+- **Dropdown chips:** `.gb-dd` chevron on Ask, Grok 4.6, Fast. Queue has no chevron (it’s an action).
+- **Tooltips:** hairline pill, header `z-index` above transcript. No native `title` on those icons.
+- **No page overscroll:** only `.gb-scroll` inside the rail scrolls. `overscroll-behavior: contain`.
+- **Code:** path on its own bar (`.gb-fence`), never `file.tsconst`. Clip scrollbars inside radius (`.gb-clip`).
+- **Fonts:** Geist Sans + JetBrains Mono, bundled woff2. Not Universal Sans from grok.com.
+- **Unofficial:** diamond + GROK BUILD + unofficial. Never the grok.com logo.
+- **Motion:** opacity + translate, 120/200ms. Reduced-motion kills live cycle and tooltip slide.
+- **present.html** is Tutul’s walkthrough only. Not product.
 
-## Components (states)
+## Components
 
-| Class | States |
+| Class | Notes |
 |---|---|
-| `.gb-btn-primary` | default, hover, disabled |
-| `.gb-btn` | default, hover, disabled |
-| `.gb-btn-danger` | default, hover |
-| `.gb-chip` | default, hover, `.is-open`, disabled; hairline |
-| `.gb-icon` | default, hover, `.is-active`, disabled; 32×32 |
-| `.gb-send` / `.gb-stop` | default, hover, disabled |
-| `.gb-field` | default, hover, focus |
-| `.gb-tooltip` | hidden, hover/focus, `.is-end`, `.is-right` |
-| `.gb-menu-item` | default, hover, `.is-active`, `.is-checked` |
-| `.gb-option` | default, hover, `.is-on` |
+| `.gb-chip` + `.gb-dd` | Menu chips + chevron |
+| `.gb-send` / `.gb-stop` | 36px circles |
+| `.gb-acc` | `<details>` tool row |
+| `.gb-clip` | Rounded output, overflow hidden, inner scroll |
+| `.gb-fence` | Code path bar + Copy / Apply |
+| `.gb-path` | Clickable file badge |
+| `.gb-tooltip` | Hover/focus; `.is-end` for the last header icon |
+| `.gb-menu` / `.gb-menu-item` | Ask modes and Fast modes |
 
-Focus: 2px `--focus` ring, offset. Do not rely on color alone for error (`exit 1` also has the word).
+## Open in Svelte
 
-## A11y / open
-
-- `--text-faint` is decorative. Body and commands use `--text-muted` or `--text`.
-- White on accent is ~3:1. Keep Send as an icon-only circle, not long text on blue.
-- Light theme of dense approval/diff was not a separate HTML file; toggle the same screens.
-- Slash autocomplete must return in Svelte even though the canvas does not stack it on the Fast menu.
+Slash autocomplete. Fast menu (canvas currently shows Ask menu on `composer.html`; Fast still needs the Auto…Heavy list). Light theme is the same screens, not duplicates.

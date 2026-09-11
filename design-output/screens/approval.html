@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../components/chrome.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="m-0 min-h-screen bg-[var(--bg)] font-[var(--font-ui)] text-[var(--text)] text-[length:var(--text-body)] leading-[var(--leading-body)] antialiased">
-    <aside class="w-full min-w-[280px] h-dvh flex flex-col">
+  <body class="gb-page">
+    <aside class="gb-rail">
       <header class="gb-header">
         <div class="gb-brand">
           <span class="gb-brand-mark" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M5 0.6 9.4 5 5 9.4 0.6 5Z" fill="currentColor"/></svg></span>
@@ -26,16 +26,18 @@
         </div>
       </header>
 
-      <div class="flex-1 min-h-0 overflow-y-auto px-5 py-4 flex flex-col gap-4">
+      <div class="gb-scroll px-4 py-5 flex flex-col gap-4">
         <article class="gb-card px-5 py-[18px]">
           <p class="m-0 text-[length:var(--text-ui)]">Grok wants to write a file</p>
-          <a href="#" class="mt-1 inline-block font-[var(--font-code)] text-[length:var(--text-meta)] text-[var(--accent)] no-underline hover:underline" title="Opens in VS Code editor">src/host/permissions.ts</a>
-          <pre class="gb-code">114  checkCommand(cmd: string) {
+          <a class="gb-path mt-2" href="#" title="Opens in VS Code editor">src/host/permissions.ts</a>
+          <div class="gb-clip">
+          <pre>114  checkCommand(cmd: string) {
 <span class="gb-diff-del">-    return this.ask(cmd);</span>
 <span class="gb-diff-add">+    const prefix = commandPrefix(cmd);</span>
 <span class="gb-diff-add">+    if (this.learned.has(prefix)) return "allow";</span>
 <span class="gb-diff-add">+    return this.ask(cmd);</span>
 118  }</pre>
+          </div>
           <div class="flex flex-wrap gap-2 mt-4">
             <button class="gb-btn-primary" type="button">Apply</button>
             <button class="gb-btn" type="button" title="Remember writes for this session">Accept all edits</button>
@@ -56,15 +58,16 @@
         </article>
       </div>
 
-      <p class="shrink-0 px-[var(--space-5)] pb-[var(--space-2)] text-[length:var(--text-meta)] text-[var(--text-faint)]">waiting for you · Permission gate prefix · ctx 38% · $0.051</p>
+      <p class="gb-status">waiting for you · Permission gate prefix · ctx 38% · $0.051</p>
       <form class="gb-composer" action="#">
         <textarea rows="1" placeholder="Ask anything"></textarea>
         <div class="gb-toolbar">
           <div class="gb-toolbar-left">
             <button type="button" class="gb-icon" title="Attach image" aria-label="Attach image"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3.5v9M3.5 8h9"/></svg></button>
-            <button type="button" class="gb-chip">Ask</button>
-            <button type="button" class="gb-chip">grok-4.6</button>
-            <button type="button" class="gb-chip">Fast <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+            <button type="button" class="gb-chip gb-dd">Ask</button>
+            <button type="button" class="gb-chip gb-dd">Grok 4.6</button>
+            <button type="button" class="gb-chip gb-dd">Fast</button>
+            <button type="button" class="gb-chip">Queue</button>
           </div>
           <button type="button" class="gb-stop" aria-label="Stop" title="Stop"><span class="gb-stop-mark"></span></button>
         </div>

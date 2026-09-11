@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Working busy — Grok Build</title>
+    <title>Salim review — Grok Build</title>
     <link rel="stylesheet" href="../design-system/tokens.css" />
     <link rel="stylesheet" href="../components/chrome.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -26,7 +26,7 @@
         </div>
       </header>
 
-      <div class="flex-1 min-h-0 overflow-y-auto px-6 py-5">
+      <div class="gb-scroll px-4 py-5">
         <p class="gb-user">review the project</p>
 
         <div class="gb-md">
@@ -38,95 +38,114 @@
         </a>
 
         <div class="gb-md">
-          <p>“Review the project” reads as a full codebase review, not a local-diff pass — I'll map the architecture, then inspect host, protocol, webview, and tests for real issues.</p>
+          <p>I’ll map the architecture, then inspect host, protocol, webview, and tests.</p>
         </div>
-        <button class="gb-summary" type="button">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3.5" width="10" height="9" rx="1"/><path d="M6 8h4"/></svg>
-          Explored 2 items, ran 1 command
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 6 3 3 3-3"/></svg>
-        </button>
+
+        <details class="gb-acc">
+          <summary>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3.5" width="10" height="9" rx="1"/><path d="M6 8h4"/></svg>
+            Explored 2 items, ran 1 command
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+          <div class="gb-summary-list">
+            <a href="#" title="Opens in VS Code editor"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 3.5h5.5L12 6v6.5H4z"/><path d="M9.5 3.5V6H12"/></svg>reviewer.md</a>
+            <a href="#" title="Opens in VS Code editor"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 3h8v2H4zM4 7h8v6H4z"/></svg>grok-build-unofficial</a>
+          </div>
+        </details>
+
+        <details class="gb-acc" open>
+          <summary>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="3.5" width="11" height="9" rx="1"/><path d="M5 8h2l.8 2 1.4-4 1 2h.8"/></svg>
+            Running npm run typecheck
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+          <div class="gb-clip">
+            <pre> &gt; svelte-check --tsconfig ./tsconfig.json --output human-verbose --incremental false
+Getting Svelte diagnostics...
+svelte-check found 0 errors and 0 warnings
+src/host/session.ts src/host/panel.ts src/acp/client.ts webview/App.svelte</pre>
+          </div>
+        </details>
+
+        <details class="gb-acc" open>
+          <summary>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="3.5" width="11" height="9" rx="1"/><path d="M5 8h2l.8 2 1.4-4 1 2h.8"/></svg>
+            Running npm run smoke
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+          <div class="gb-clip">
+            <pre>Extension host exited before the smoke window attached. D:\projects\grok-build-unofficial\node_modules\@vscode\test-electron\out\runTest.js
+error Command failed with exit code 1.</pre>
+          </div>
+        </details>
 
         <div class="gb-md">
-          <p>I'll go through the host, ACP client, webview, and tests next so the review is based on actual code, not just the layout.</p>
+          <p>Core session and permission files are in. Next I’ll finish the host, then the webview.</p>
         </div>
-        <button class="gb-summary" type="button" aria-expanded="true">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3.5" width="10" height="9" rx="1"/><path d="M6 8h4"/></svg>
-          Explored 7 items, ran 3 commands
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 10 3-3 3 3"/></svg>
-        </button>
-        <div class="gb-summary-list">
-          <a href="#" title="Opens in VS Code editor"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 3.5h5.5L12 6v6.5H4z"/><path d="M9.5 3.5V6H12"/></svg>package.json</a>
-          <a href="#" title="Opens in VS Code editor"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 3.5h5.5L12 6v6.5H4z"/><path d="M9.5 3.5V6H12"/></svg>README.md</a>
-          <a href="#" title="Opens in VS Code editor"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 3h8v2H4zM4 7h8v6H4z"/></svg>src</a>
-          <a href="#" title="Opens in VS Code editor"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 3h8v2H4zM4 7h8v6H4z"/></svg>webview</a>
-          <a href="#" title="Opens in VS Code editor"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 3.5h5.5L12 6v6.5H4z"/><path d="M9.5 3.5V6H12"/></svg>src/extension.ts</a>
-          <a href="#" title="Opens in VS Code editor"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 3.5h5.5L12 6v6.5H4z"/><path d="M9.5 3.5V6H12"/></svg>SECURITY.md</a>
-        </div>
+
+        <details class="gb-acc" open>
+          <summary>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.5 12.5 12 4l1.5 1.5-8.5 8.5H3.5v-1.5z"/></svg>
+            Edited permissions.ts
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+          <div class="gb-clip">
+            <pre><span class="gb-diff-del">-    return this.ask(cmd);</span>
+<span class="gb-diff-add">+    const prefix = commandPrefix(cmd);</span>
+<span class="gb-diff-add">+    if (this.learned.has(prefix)) return "allow";</span>
+<span class="gb-diff-add">+    return this.ask(cmd);</span></pre>
+          </div>
+        </details>
+
+        <article class="gb-card px-5 py-4 mt-4 mb-4">
+          <p class="m-0 text-[13px]">Grok wants to write a file</p>
+          <a class="gb-path mt-2" href="#" title="Opens in VS Code editor">src/host/permissions.ts</a>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <button class="gb-btn-primary" type="button">Apply</button>
+            <button class="gb-btn" type="button">Accept all edits</button>
+            <button class="gb-btn-danger" type="button">Reject</button>
+          </div>
+        </article>
+
+        <article class="gb-card px-5 py-4 mb-4">
+          <p class="m-0 text-[13px]">Grok wants to run a command</p>
+          <p class="mt-2 mb-0 font-[var(--font-code)] text-[13px]">$ npm test --filter permissions</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <button class="gb-btn-primary" type="button">Run</button>
+            <button class="gb-btn" type="button">Always allow</button>
+            <button class="gb-btn-danger" type="button">Reject</button>
+            <button class="gb-btn" type="button">Never</button>
+          </div>
+        </article>
 
         <div class="gb-md">
-          <p>Core session and permission files are in; next I'll finish the rest of the host, then the webview and tests.</p>
-        </div>
-        <button class="gb-summary" type="button">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3.5" width="10" height="9" rx="1"/><path d="M6 8h4"/></svg>
-          Explored 34 items, ran 1 command
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 6 3 3 3-3"/></svg>
-        </button>
+          <p>Permission gate is real. This extension is the only ask/deny layer on <code>fs/write_text_file</code> and <code>terminal/create</code>.</p>
 
-        <div class="gb-md">
-          <p>This is a solid unofficial VS Code ACP client: typed host/webview split, a real permission gate at the fs/terminal boundary, and a lot of production-minded UI work. The main gaps are no workspace sandbox, almost no unit tests, and a few concrete host bugs.</p>
-
-          <h2>What it is</h2>
-          <p>Grok Build (unofficial) 0.2.2 wraps <code>grok agent stdio</code> over JSON-RPC and renders a sidebar chat (Svelte 5). The host owns transcript, approvals, sessions, rewind, and worktrees; the webview is a renderer plus composer.</p>
-          <p>The split is the right one. Protocol quirks stay in <code>GrokSession</code> / <code>AcpClient</code>. The UI can change without touching the wire.</p>
-
-          <h2>What is done well</h2>
-          <ul>
-            <li>Permission gate is real. Grok is spawned with <code>bypassPermissions</code>; this extension is the only ask/deny layer on <code>fs/write_text_file</code> and <code>terminal/create</code>.</li>
-            <li>Approvals still accept arbitrary <code>cwd</code> and <code>env</code>.</li>
-          </ul>
-
-          <pre><span class="gb-code-head">:51:src/host/terminalBridge.ts</span>const env: NodeJS.ProcessEnv = { ...process.env }
+          <figure class="gb-fence">
+            <div class="gb-fence-bar">
+              <a class="gb-path" href="#" title="Opens in VS Code editor">src/host/terminalBridge.ts</a>
+              <button class="gb-copy" type="button">Copy</button>
+              <button class="gb-copy" type="button">Apply to file</button>
+            </div>
+            <pre>const env: NodeJS.ProcessEnv = { ...process.env }
 for (const pair of params.env ?? []) env[pair.name] = pair.value</pre>
-
-          <h3>3. Image URLs skipped on first paint — bug</h3>
-          <p><code>ChatViewProvider.post()</code> rewrites attachment paths to webview URLs. The <code>ready</code> handler does not: it posts <code>getState()</code> and the backlog with raw <code>postMessage</code>.</p>
-
-          <pre><span class="gb-code-head">:108:src/host/panel.ts</span>post(message: HostMessage): void {
-  if (!this.view || !this.ready) {
-    this.queued.push(message)
-    return
-  }</pre>
-
-          <h2>Architecture / maintainability</h2>
-          <table>
-            <thead>
-              <tr><th>Area</th><th>Note</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><code>src/host/session.ts</code></td><td>~3,700 lines: lifecycle, transcript, slash, approvals, protocol, sessions, rewind, worktrees. Split along the existing comment sections.</td></tr>
-              <tr><td>Tests</td><td>No unit tests. Smoke needs a real VS Code. Gate matrix should be node tests with no <code>vscode</code>.</td></tr>
-              <tr><td>Queue</td><td><code>flushInterjections</code> concatenates every queued message into one turn.</td></tr>
-            </tbody>
-          </table>
+          </figure>
 
           <h2>Verdict</h2>
-          <p>Ship-quality as a community ACP UI: protocol handling is careful, the permission story is honest, and the chat UI is more finished than most unofficial clients.</p>
-          <p>I would not call the security boundary complete until writes are confined to the workspace and always-allow commands include <code>cwd</code>/<code>env</code>.</p>
+          <p>Ship-quality as a community ACP UI. Writes still need a workspace sandbox, and always-allow should include <code>cwd</code> and <code>env</code>.</p>
         </div>
         <p class="m-0 mt-6 text-[12px] text-[var(--text-faint)]">7:34 PM</p>
       </div>
 
-      <button class="gb-scroll-bottom gb-chip" type="button">Scroll to bottom</button>
-
-      <p class="gb-status">working · User Queries AI Id… · ctx 3% · 15.7k / 2.0m</p>
+      <p class="gb-status">working · review the project · ctx 3% · 15.7k / 2.0m</p>
       <form class="gb-composer" action="#">
         <textarea rows="1" placeholder="Ask anything"></textarea>
         <div class="gb-toolbar">
           <div class="gb-toolbar-left">
             <button type="button" class="gb-icon" aria-label="Attach image"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3.5v9M3.5 8h9"/></svg></button>
-            <button type="button" class="gb-chip">Bypass</button>
-            <button type="button" class="gb-chip">Grok 4.6</button>
-            <button type="button" class="gb-chip">Fast <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+            <button type="button" class="gb-chip gb-dd">Bypass</button>
+            <button type="button" class="gb-chip gb-dd">Grok 4.6</button>
+            <button type="button" class="gb-chip gb-dd">Fast</button>
             <button type="button" class="gb-chip">Queue</button>
           </div>
           <button type="button" class="gb-stop" aria-label="Stop" title="Stop"><span class="gb-stop-mark"></span></button>

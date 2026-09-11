@@ -2,6 +2,8 @@
 
 Visual HTML for Tutul’s review and Salim’s implementation. Not the shipped webview.
 
+Canvas is locked: grok.com chat feel, Claude-style collapsible tools, all inventory chips visible, light/dark toggle, no page overscroll. Read `handoff/README.md` next.
+
 ## Open
 
 Open `index.html` in a browser, or any file under `screens/`. Each screen fills the window like a VS Code chat panel. Resize the browser to mimic dragging the split. Floor is 280px.

@@ -1,33 +1,36 @@
 # Handoff — Grok Build unofficial sidebar
 
-Visual language for Salim. Rebuild in the existing Svelte webview. Do not ship this HTML.
+Rebuild in the existing **Svelte 5 webview**. Do not ship this HTML. Do not copy `present.html` or the deck bar into the product.
 
-## Open the canvas
+**Flagship:** `design-output/screens/working-busy.html`
 
-1. `design-output/index.html` in a browser.
-2. Sun/moon toggles light and dark. Choice persists in `localStorage`.
-3. Resize the window. The rail is fluid from 280px, like dragging the VS Code chat split.
+**Walkthrough (Tutul only):** `design-output/index.html` → Presentation → `present.html`. Screen files themselves have no presentation chrome.
 
-Tokens: `design-output/design-system/tokens.css`  
-Chrome: `design-output/components/chrome.css`  
-Theme toggle: `design-output/components/theme.js` (canvas only; production already has a theme setting)
+## Open
 
-## What this is
+1. `design-output/index.html`
+2. Sun/moon = light/dark (`localStorage` in the canvas; production uses the existing `grokBuild` theme setting)
+3. Resize like the VS Code chat split (floor 280px)
 
-Unofficial Grok Build sidebar, grok.com *chat* feel. Keep every control in `docs/UI_INVENTORY.md`. Do not copy grok.com’s wordmark, logo, or Universal Sans. UI face is Geist Sans; mono is JetBrains Mono (already bundled as Inter today — swap family, keep bundling woff2).
+| File | Role |
+|---|---|
+| `design-output/design-system/tokens.css` | Color, type, space, radius, motion |
+| `design-output/components/chrome.css` | Composer, chips, tools, cards, tooltips |
+| `docs/UI_INVENTORY.md` | Every control that must survive |
 
-## Product rules that are not paint
+## Non-negotiables
 
-- File path click → real VS Code editor (`title`: Opens in VS Code editor).
-- `diff` → VS Code side-by-side. Inline peek is a document slice, not Monaco in the rail.
-- Terminal output stays on the RUN row in chat. Do not embed a VS Code terminal.
-- Voice, Imagine, grok.com Bot stay out.
-- Do not hide Ask / Accept / Plan / Bypass, model, effort, attach, Send/Stop/queue.
+- Keep every inventory control. Hide nothing in a gear.
+- Path click → VS Code editor. `diff` → VS Code side-by-side.
+- Terminal output lives in the tool accordion, not a fake VS Code terminal.
+- Voice / Imagine / grok.com logo / Universal Sans: out.
+- Ask / Accept / Plan / Bypass, Grok 4.6, Fast: chips with chevron (`.gb-dd`). Queue only while a turn is running. Send or Stop on the right, never both.
+- Always allow lives on the **command approval card**, not on the Ask chip.
 
-## Map grok.com labels to ACP
+## Effort labels
 
-Effort chips read **Auto / Fast / Expert / Build / Heavy** in the canvas. Persist the ACP `modeId` the CLI advertises. Do not invent modes the agent does not send.
+Canvas shows Auto / Fast / Expert / Build / Heavy. Persist the ACP `modeId`. Do not invent modes the CLI does not send.
 
 ## Next
 
-Read `flows.md`, then `thinking.md`. Rebuild screen by flow, not by copying markup.
+`flows.md` then `thinking.md`. Rebuild by flow.
