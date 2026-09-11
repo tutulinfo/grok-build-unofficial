@@ -35,4 +35,9 @@ Desktop.ini
 # Design-mock iteration screenshots: 8MB of throwaway visual diffs, not sources
 tools/design-mock/shot-*.png
 
-rotetional/
+# Tutul-only — not Salim's rebuild kit
+design-output/rationale/
+# design-output/present.html
+design-output/handoff/PROJECT_REVIEW.md
+
+
