@@ -685,6 +685,38 @@ html[data-present] .gb-deck {
   background: var(--accent-subtle);
 }
 
+.gb-gate {
+  margin: 0 0 12px;
+}
+
+.gb-gate > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  cursor: pointer;
+  padding: 6px 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.gb-gate > summary::-webkit-details-marker { display: none; }
+
+.gb-gate > summary:hover { color: var(--text); }
+
+.gb-gate-body {
+  padding: 12px 14px 14px;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  background: var(--bg-raised);
+}
+
+.gb-gate-body .gb-clip { margin-top: 10px; }
+
+.gb-gate .gb-chevron { margin-left: auto; }
+
+.gb-gate[open] .gb-chevron { transform: rotate(180deg); }
+
 .gb-composer {
   position: relative;
   z-index: var(--z-dock);

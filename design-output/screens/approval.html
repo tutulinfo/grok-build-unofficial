@@ -26,36 +26,65 @@
         </div>
       </header>
 
-      <div class="gb-scroll px-4 py-5 flex flex-col gap-4">
-        <article class="gb-card px-5 py-[18px]">
-          <p class="m-0 text-[length:var(--text-ui)]">Grok wants to write a file</p>
-          <a class="gb-path mt-2" href="#" title="Opens in VS Code editor">src/host/permissions.ts</a>
-          <div class="gb-clip">
-          <pre>114  checkCommand(cmd: string) {
-<span class="gb-diff-del">-    return this.ask(cmd);</span>
-<span class="gb-diff-add">+    const prefix = commandPrefix(cmd);</span>
-<span class="gb-diff-add">+    if (this.learned.has(prefix)) return "allow";</span>
-<span class="gb-diff-add">+    return this.ask(cmd);</span>
-118  }</pre>
-          </div>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <button class="gb-btn-primary" type="button">Apply</button>
-            <button class="gb-btn" type="button" title="Remember writes for this session">Accept all edits</button>
-            <button class="gb-btn-danger" type="button">Reject</button>
-          </div>
-        </article>
+      <div class="gb-scroll px-4 py-5">
+        <details class="gb-gate">
+          <summary>
+            Applied <a class="gb-path" href="#" title="Opens in VS Code editor">fsBridge.ts</a>
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+        </details>
+        <details class="gb-gate">
+          <summary>
+            Always allow <span class="font-[var(--font-code)] text-[12px]">npm test:*</span>
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+        </details>
+        <details class="gb-gate">
+          <summary>
+            Rejected write to <a class="gb-path" href="#" title="Opens in VS Code editor">secrets.env</a>
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+        </details>
+        <details class="gb-gate">
+          <summary>
+            Never allow <span class="font-[var(--font-code)] text-[12px]">rm:*</span>
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+        </details>
 
-        <article class="gb-card px-5 py-[18px]">
-          <p class="m-0 text-[length:var(--text-ui)]">Grok wants to run a command</p>
-          <p class="mt-2 mb-0 font-[var(--font-code)] text-[length:var(--text-ui)]">$ npm test --filter permissions</p>
-          <p class="mt-1 mb-0 text-[length:var(--text-meta)] text-[var(--text-muted)] font-[var(--font-code)]">D:\projects\grok-build-unofficial</p>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <button class="gb-btn-primary" type="button">Run</button>
-            <button class="gb-btn" type="button" title="Bash(npm test:*)">Always allow</button>
-            <button class="gb-btn-danger" type="button">Reject</button>
-            <button class="gb-btn" type="button">Never</button>
+        <details class="gb-gate" open>
+          <summary>
+            Write <a class="gb-path" href="#" title="Opens in VS Code editor">src/host/permissions.ts</a>
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+          <div class="gb-gate-body">
+            <div class="gb-clip">
+              <pre><span class="gb-diff-del">-    return this.ask(cmd);</span>
+<span class="gb-diff-add">+    const prefix = commandPrefix(cmd);</span></pre>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <button class="gb-btn-primary" type="button">Apply</button>
+              <button class="gb-btn" type="button" title="Auto-approve writes this session">Accept all edits</button>
+              <button class="gb-btn-danger" type="button">Reject</button>
+            </div>
           </div>
-        </article>
+        </details>
+
+        <details class="gb-gate" open>
+          <summary>
+            Run <span class="font-[var(--font-code)] text-[12px]">npm test --filter permissions</span>
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+          <div class="gb-gate-body">
+            <p class="m-0 mb-3 text-[12px] text-[var(--text-muted)] font-[var(--font-code)]">D:\projects\grok-build-unofficial</p>
+            <div class="flex flex-wrap gap-2">
+              <button class="gb-btn-primary" type="button">Run</button>
+              <button class="gb-btn" type="button" title="Bash(npm test:*)">Always allow</button>
+              <button class="gb-btn-danger" type="button">Reject</button>
+              <button class="gb-btn" type="button">Never</button>
+            </div>
+          </div>
+        </details>
       </div>
 
       <p class="gb-status">waiting for you · Permission gate prefix · ctx 38% · $0.051</p>

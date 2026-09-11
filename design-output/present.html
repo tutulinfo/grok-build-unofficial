@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Presentation — Grok Build</title>
+    <link rel="stylesheet" href="design-system/tokens.css" />
+    <link rel="stylesheet" href="components/chrome.css" />
+    <style>
+      html, body { height: 100%; margin: 0; overflow: hidden; }
+      #stage { flex: 1; width: 100%; border: 0; background: var(--bg); }
+    </style>
+  </head>
+  <body class="gb-page">
+    <nav class="gb-deck is-on">
+      <a href="#" id="prev">←</a>
+      <span id="label">1 / 10 · First run</span>
+      <a href="#" id="next">→</a>
+    </nav>
+    <iframe id="stage" title="Screen" src="screens/empty.html"></iframe>
+    <script>
+      var steps = [
+        ["screens/empty.html", "1 / 10 · First run"],
+        ["screens/empty-ready.html", "2 / 10 · Ready to ask"],
+        ["screens/working.html", "3 / 10 · First tools"],
+        ["screens/working-busy.html", "4 / 10 · Coding turn"],
+        ["screens/approval.html", "5 / 10 · Permissions"],
+        ["screens/diff-peek.html", "6 / 10 · Inspect edit"],
+        ["screens/terminal.html", "7 / 10 · Terminal"],
+        ["screens/composer.html", "8 / 10 · Permission menu"],
+        ["screens/question-plan.html", "9 / 10 · Question + plan"],
+        ["screens/history.html", "10 / 10 · History"]
+      ];
+      var i = 0;
+      var stage = document.getElementById("stage");
+      var label = document.getElementById("label");
+      function go(n) {
+        i = (n + steps.length) % steps.length;
+        stage.src = steps[i][0];
+        label.textContent = steps[i][1];
+      }
+      document.getElementById("prev").addEventListener("click", function (e) { e.preventDefault(); go(i - 1); });
+      document.getElementById("next").addEventListener("click", function (e) { e.preventDefault(); go(i + 1); });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight") go(i + 1);
+        if (e.key === "ArrowLeft") go(i - 1);
+      });
+    </script>
+  </body>
+</html>

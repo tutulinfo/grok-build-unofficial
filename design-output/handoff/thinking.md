@@ -3,6 +3,7 @@
 - **Feel:** grok.com chat in a VS Code rail — hairline pill composer, circular Send/Stop, quiet type (Geist 400, body `--text-muted`). Not a pixel copy of grok.com or of the official Grok VS Code tab.
 - **Tools:** Claude-style accordion. Default one line. Chevron means it opens. Filename is the open-in-editor target.
 - **Features stay.** Approvals, Queue (busy only), Bypass, Always allow, rewind, worktree — restyle, don’t delete. Don’t hide chips in a gear.
+- **After Apply/Run/Reject/Never** the fat card collapses to one line (`Applied permissions.ts`, `Always allow npm test:*`). Ask-mode users will see many gates; only the current prompt stays open. History is the one-liner, chevron to peek. Accept all edits also flips the composer chip to Accept so later writes skip the card.
 - **History** is a full-width panel. A 260px drawer beside chat **breaks at ~400px**.
 - **Gutter:** transcript, status, composer all **16px**.
 - **Composer padding:** 12×14px, toolbar gap 10px. Do not return to a dense 4px bar.

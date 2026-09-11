@@ -97,26 +97,38 @@ error Command failed with exit code 1.</pre>
           </div>
         </details>
 
-        <article class="gb-card px-5 py-4 mt-4 mb-4">
-          <p class="m-0 text-[13px]">Grok wants to write a file</p>
-          <a class="gb-path mt-2" href="#" title="Opens in VS Code editor">src/host/permissions.ts</a>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <button class="gb-btn-primary" type="button">Apply</button>
-            <button class="gb-btn" type="button">Accept all edits</button>
-            <button class="gb-btn-danger" type="button">Reject</button>
-          </div>
-        </article>
+        <details class="gb-gate">
+          <summary>
+            Applied <a class="gb-path" href="#" title="Opens in VS Code editor">fsBridge.ts</a>
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+        </details>
+        <details class="gb-gate">
+          <summary>
+            Always allow <code class="font-[var(--font-code)] text-[12px]">npm test:*</code>
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+        </details>
+        <details class="gb-gate">
+          <summary>
+            Rejected write to <a class="gb-path" href="#" title="Opens in VS Code editor">secrets.env</a>
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+        </details>
 
-        <article class="gb-card px-5 py-4 mb-4">
-          <p class="m-0 text-[13px]">Grok wants to run a command</p>
-          <p class="mt-2 mb-0 font-[var(--font-code)] text-[13px]">$ npm test --filter permissions</p>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <button class="gb-btn-primary" type="button">Run</button>
-            <button class="gb-btn" type="button">Always allow</button>
-            <button class="gb-btn-danger" type="button">Reject</button>
-            <button class="gb-btn" type="button">Never</button>
+        <details class="gb-gate" open>
+          <summary>
+            Write <a class="gb-path" href="#" title="Opens in VS Code editor">src/host/permissions.ts</a>
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+          <div class="gb-gate-body">
+            <div class="flex flex-wrap gap-2">
+              <button class="gb-btn-primary" type="button">Apply</button>
+              <button class="gb-btn" type="button" title="Auto-approve writes this session">Accept all edits</button>
+              <button class="gb-btn-danger" type="button">Reject</button>
+            </div>
           </div>
-        </article>
+        </details>
 
         <div class="gb-md">
           <p>Permission gate is real. This extension is the only ask/deny layer on <code>fs/write_text_file</code> and <code>terminal/create</code>.</p>
