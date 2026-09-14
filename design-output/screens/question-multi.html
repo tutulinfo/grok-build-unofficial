@@ -45,19 +45,19 @@
 
       <div class="gb-sticky-gate">
         <p>Question 2 of 2</p>
-        <p style="color:var(--text)">Which surfaces should remember Always-allow?</p>
-        <label class="flex gap-2 items-start text-[12px] text-[var(--text-muted)]">
-          <input type="checkbox" name="q2" checked style="accent-color:var(--accent)" />
-          <span><span style="color:var(--text)">Commands this session</span> — forget on restart</span>
-        </label>
-        <label class="flex gap-2 items-start text-[12px] text-[var(--text-muted)]">
-          <input type="checkbox" name="q2" checked style="accent-color:var(--accent)" />
-          <span><span style="color:var(--text)">Writes this session</span> — applied edits only</span>
-        </label>
-        <label class="flex gap-2 items-start text-[12px] text-[var(--text-muted)]">
-          <input type="checkbox" name="q2" style="accent-color:var(--accent)" />
-          <span><span style="color:var(--text)">Outside workspace</span><br /><span class="text-[11px]" style="color:var(--warning)">Remembered across sessions — review before enabling</span></span>
-        </label>
+         <p class="gb-ink">Which surfaces should remember Always-allow?</p>
+         <label class="flex gap-2 items-start text-[12px] text-[var(--text-muted)]">
+           <input class="gb-check" type="checkbox" name="q2" checked />
+           <span><span class="gb-ink">Commands this session</span> — forget on restart</span>
+         </label>
+         <label class="flex gap-2 items-start text-[12px] text-[var(--text-muted)]">
+           <input class="gb-check" type="checkbox" name="q2" checked />
+           <span><span class="gb-ink">Writes this session</span> — applied edits only</span>
+         </label>
+         <label class="flex gap-2 items-start text-[12px] text-[var(--text-muted)]">
+           <input class="gb-check" type="checkbox" name="q2" />
+           <span><span class="gb-ink">Outside workspace</span><br /><span class="text-[11px] gb-warn">Remembered across sessions — review before enabling</span></span>
+         </label>
         <input class="gb-field" placeholder="Other…" />
         <div class="gb-sticky-actions">
           <button class="gb-btn" type="button">Back</button>

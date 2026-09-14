@@ -14,6 +14,14 @@ html {
   overflow: hidden;
 }
 
+html.gb-doc,
+html.gb-doc body.gb-page {
+  height: auto;
+  max-height: none;
+  overflow: auto;
+  overscroll-behavior: auto;
+}
+
 .gb-page {
   margin: 0;
   display: flex;
@@ -399,6 +407,33 @@ html[data-present] .gb-deck {
   color: var(--text-muted);
 }
 
+.gb-status .gb-hot {
+  color: var(--danger);
+}
+
+.gb-status button {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--text-meta);
+  cursor: pointer;
+}
+
+.gb-status button:hover {
+  text-decoration: underline;
+}
+
+.gb-ink {
+  color: var(--text);
+}
+
+.gb-check {
+  accent-color: var(--accent);
+}
+
 .gb-card,
 .gb-composer {
   box-sizing: border-box;
@@ -595,9 +630,13 @@ html[data-present] .gb-deck {
   border-radius: 8px;
 }
 
-.gb-ok,
-.gb-warn,
-.gb-err {
+.gb-ok { color: var(--success); }
+.gb-warn { color: var(--warning); }
+.gb-err { color: var(--danger); }
+
+.gb-acc > summary .gb-ok,
+.gb-acc > summary .gb-warn,
+.gb-acc > summary .gb-err {
   display: inline-flex;
   align-items: center;
   height: 16px;
@@ -609,9 +648,6 @@ html[data-present] .gb-deck {
   line-height: 1;
   flex-shrink: 0;
 }
-.gb-ok { color: var(--success); }
-.gb-warn { color: var(--warning); }
-.gb-err { color: var(--danger); }
 
 .gb-path {
   display: inline-flex;
@@ -1074,6 +1110,11 @@ html[data-present] .gb-deck {
   background: var(--bg-raised);
 }
 
+.gb-dialog.is-flush {
+  padding: 0;
+  max-width: none;
+}
+
 .gb-dialog > p:first-child {
   margin: 0 0 6px;
   font-size: 13px;
@@ -1103,6 +1144,10 @@ html[data-present] .gb-deck {
   border-radius: 10px;
   border: 1px solid var(--hairline);
   background: var(--bg-active);
+}
+
+.gb-thumb-swatch.is-inset {
+  background: var(--bg-inset);
 }
 
 .gb-thumb-x {

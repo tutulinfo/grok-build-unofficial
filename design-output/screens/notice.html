@@ -38,14 +38,14 @@
           Loaded session <span class="text-[var(--text-muted)]">Permission gate prefix</span>
         </p>
 
-        <div class="mb-4 flex items-center gap-[var(--space-2)] border-y border-[var(--hairline)] py-[var(--space-2)] text-[length:var(--text-ui)]" style="color:var(--warning)">
+         <div class="mb-4 flex items-center gap-[var(--space-2)] border-y border-[var(--hairline)] py-[var(--space-2)] text-[length:var(--text-ui)] gb-warn">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" class="flex-shrink-0"><path d="M8 2.5 14 13H2z"/><path d="M8 6.5v3"/><circle cx="8" cy="11.3" r=".6" fill="currentColor" stroke="none"/></svg>
           <span>Context is 78% full</span>
           <button type="button" class="gb-tool-open">Compact</button>
         </div>
 
         <section class="border border-[var(--hairline)] rounded-[12px] px-4 py-3">
-          <p class="m-0 text-[length:var(--text-ui)]" style="color:var(--danger)">grok exited</p>
+           <p class="m-0 text-[length:var(--text-ui)] gb-err">grok exited</p>
           <pre class="gb-code mt-[var(--space-2)]">grok agent stdio exited (code 1)
 last frame: session/update 12:04:09 · stdout closed after 4.2s</pre>
           <button type="button" class="gb-btn mt-[var(--space-3)]">View log</button>

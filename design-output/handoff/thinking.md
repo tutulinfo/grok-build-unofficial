@@ -1,36 +1,12 @@
-# Thinking — do not “normalize”
+# Do not “normalize”
 
-- **Feel:** grok.com chat in a VS Code rail — hairline pill composer, circular Send/Stop, quiet type (Geist 400, body `--text-muted`). Not a pixel copy of grok.com or of the official Grok VS Code tab.
-- **Tools:** Claude-style accordion. Default one line. Chevron means it opens. Filename is the open-in-editor target.
-- **Features stay.** Approvals, Queue (busy only), Bypass, Always allow, rewind, worktree — restyle, don’t delete. Don’t hide chips in a gear.
-- **Pending gate is a sticky bar above the composer**, not a card in the transcript. Chat only keeps one-liners after the fact (`Applied permissions.ts`). Ask-mode spam stays out of the scroll. Accept all flips the chip to Accept. Always allow is still on the command bar, not the Ask chip.
-- **History** is sessions only (clock). Rewind is the rewind icon. Worktree is More → Worktree…. Do not mix the three.
-- **Gutter:** transcript, status, composer all **16px**.
-- **Composer padding:** 12×14px, toolbar gap 10px. Do not return to a dense 4px bar.
-- **Dropdown chips:** `.gb-dd` chevron on Ask, Grok 4.6, Fast. Queue has no chevron (it’s an action).
-- **Tooltips:** hairline pill, header `z-index` above transcript. No native `title` on those icons.
-- **No page overscroll:** only `.gb-scroll` inside the rail scrolls. `overscroll-behavior: contain`.
-- **Code:** path on its own bar (`.gb-fence`), never `file.tsconst`. Clip scrollbars inside radius (`.gb-clip`).
-- **Fonts:** Geist Sans + JetBrains Mono, bundled woff2. Not Universal Sans from grok.com.
-- **Unofficial:** diamond + GROK BUILD + unofficial. Never the grok.com logo.
-- **Motion:** opacity + translate, 120/200ms. Reduced-motion kills live cycle and tooltip slide.
-- **present.html** is Tutul’s walkthrough only. Not product.
-
-## Components
-
-| Class | Notes |
-|---|---|
-| `.gb-chip` + `.gb-dd` | Menu chips + chevron |
-| `.gb-send` / `.gb-stop` | 36px circles |
-| `.gb-acc` | `<details>` tool row |
-| `.gb-clip` | Rounded output, overflow hidden, inner scroll |
-| `.gb-fence` | Code path bar + Copy / Apply |
-| `.gb-path` | Clickable file badge |
-| `.gb-tooltip` | Hover/focus; `.is-end` for the last header icon |
-| `.gb-menu` / `.gb-menu-item` | Header More, history ⋯, Ask/Fast/slash — one shell. Danger rows use `.is-danger`. |
-| `.gb-scrim` / `.gb-dialog` | Centered named confirm (rewind). Sticky gate stays for live permissions. |
-| `.gb-restart` | Same 36px slot as Send/Stop when the agent is stopped. |
-
-## Open in Svelte
-
-Light theme is the same screens, not duplicates. Fast menu is `composer-effort.html`. Slash is `composer-slash.html`.
+- grok.com **chat** in a 400px rail. Geist 400. JetBrains Mono on paths. Hairline. No shadow.
+- Tools = one-line accordion. Filename opens the editor. `diff` opens VS Code side-by-side.
+- Live gate = sticky bar above composer. Transcript keeps one-liners after (`Applied permissions.ts`).
+- Accept all → Ask chip becomes Accept. Always allow stays on the command bar.
+- Clock = sessions. Rewind icon = rewind. More → Worktree…. Three places.
+- Gutter 16px. Composer pad 12×14. Toolbar gap 10px. Do not densify.
+- `.gb-menu` is one shell for More, history ⋯, Ask, Fast, slash. Danger = `.is-danger`.
+- Rewind confirm = centered `.gb-scrim` + `.gb-dialog`. Permission ask stays sticky.
+- Fonts: bundle Geist + JetBrains woff2. Never `cdn.grok.com`.
+- Motion: opacity + translate, 120/200ms. Reduced-motion kills live cycle.

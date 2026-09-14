@@ -29,12 +29,14 @@
         <p class="gb-user">review the project</p>
         <p class="gb-msg">I'll survey host, webview, and tests next.</p>
       </div>
-      <div class="gb-sticky-gate">
-        <p>Restart agent</p>
-        <p style="color:var(--text)">This ends the current turn and starts a new Grok process. The chat stays.</p>
-        <div class="gb-sticky-actions">
-          <button class="gb-btn-danger" type="button">Restart</button>
-          <button class="gb-btn" type="button">Cancel</button>
+      <div class="gb-scrim">
+        <div class="gb-dialog" role="dialog" aria-modal="true" aria-label="Restart agent">
+          <p>Restart agent</p>
+          <p>This ends the current turn and starts a new Grok process. The chat stays.</p>
+          <div class="gb-sticky-actions">
+            <button class="gb-btn-danger" type="button">Restart</button>
+            <button class="gb-btn" type="button">Cancel</button>
+          </div>
         </div>
       </div>
       <p class="gb-status">ready · review the project · ctx 3%</p>

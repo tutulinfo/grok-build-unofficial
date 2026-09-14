@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body class="gb-page">
-    <aside class="gb-rail" style="position:relative">
+    <aside class="gb-rail">
       <header class="gb-header">
         <div class="gb-brand">
           <span class="gb-brand-mark" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M5 0.6 9.4 5 5 9.4 0.6 5Z" fill="currentColor"/></svg></span>
@@ -46,8 +46,8 @@
         </div>
       </form>
 
-      <div class="absolute inset-0 z-[var(--z-modal)] flex items-center justify-center bg-[var(--scrim)] px-[var(--space-4)]">
-        <div class="w-full rounded-[16px] border border-[var(--hairline)] bg-[var(--bg-raised)]" role="dialog" aria-label="Context window">
+      <div class="gb-scrim">
+        <div class="gb-dialog is-flush" role="dialog" aria-label="Context window">
           <div class="flex items-center gap-[var(--space-2)] border-b border-[var(--hairline)] px-[var(--space-4)] py-[var(--space-3)]">
             <span class="rounded-full border border-[var(--hairline)] px-[var(--space-2)] py-[2px] font-[var(--font-code)] text-[12px] leading-[1.4] text-[var(--text-muted)]">/context</span>
             <span class="text-[13px] text-[var(--text)]">Context window</span>
