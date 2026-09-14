@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Empty / first-run — Grok Build</title>
+    <title>Sign in required — Grok Build</title>
     <link rel="stylesheet" href="../design-system/tokens.css" />
     <link rel="stylesheet" href="../components/chrome.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -25,17 +25,11 @@
           <button class="gb-icon" aria-label="More"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="3.5" cy="8" r=".75" fill="currentColor"/><circle cx="8" cy="8" r=".75" fill="currentColor"/><circle cx="12.5" cy="8" r=".75" fill="currentColor"/></svg><span class="gb-tooltip is-end">More</span></button>
         </div>
       </header>
-
       <div class="gb-scroll px-4 flex flex-col">
         <div class="flex-1"></div>
-        <p class="m-0 text-center text-[length:var(--text-display)] leading-[var(--leading-display)] tracking-[var(--tracking-display)] font-[var(--weight-regular)] text-[var(--text)]">Ask anything about this workspace</p>
-        <p class="mt-[var(--space-3)] mb-0 text-center text-[length:var(--text-meta)] text-[var(--text-muted)]">
-          <kbd class="font-[var(--font-code)]">Enter</kbd> send · <kbd class="font-[var(--font-code)]">Shift+Enter</kbd> newline
-        </p>
-        <div class="flex-1"></div>
         <section class="gb-card mb-4 px-5 py-[18px]">
-          <p class="m-0 text-[length:var(--text-ui)] text-[var(--text-muted)]">Grok CLI isn’t on PATH</p>
-          <pre class="mt-[var(--space-2)] mb-[var(--space-3)] overflow-x-auto font-[var(--font-code)] text-[length:var(--text-meta)] text-[var(--text-muted)]">grok: command not found</pre>
+          <p class="m-0 text-[length:var(--text-ui)] text-[var(--text-muted)]">Sign in to Grok CLI</p>
+          <pre class="mt-[var(--space-2)] mb-[var(--space-3)] overflow-x-auto font-[var(--font-code)] text-[length:var(--text-meta)] text-[var(--text-muted)]">grok: not authenticated</pre>
           <div class="flex flex-wrap gap-[var(--space-2)]">
             <a href="https://grok.x.ai" class="gb-btn-primary inline-flex items-center no-underline">Open grok.x.ai</a>
             <button type="button" class="gb-btn">Retry</button>
@@ -43,9 +37,7 @@
           </div>
         </section>
       </div>
-
-      <p class="gb-status">stopped · new session · grok-build-unofficial · ctx 4% · $0.000</p>
-
+      <p class="gb-status">stopped · new session · grok-build-unofficial</p>
       <form class="gb-composer" action="#">
         <textarea rows="1" disabled placeholder="Ask anything"></textarea>
         <div class="gb-toolbar">

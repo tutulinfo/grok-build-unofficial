@@ -12,7 +12,7 @@ Open `index.html` in a browser, or any file under `screens/`. Each screen fills 
 
 - Geist Sans 400 + JetBrains Mono
 - Canvas `#1E1F22`
-- Radius 8 / 12 / 16 (composer is 16)
+- Radius 8 / 12 / 28 (composer pill is 28). Chips and word buttons are pills.
 - 8pt spacing, 4px half-step
 - No drop shadows
 - Task-type glyphs beside tool verbs; status icon changes while working

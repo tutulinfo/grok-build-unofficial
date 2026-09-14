@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>History — Grok Build</title>
+    <title>Delete chat — Grok Build</title>
     <link rel="stylesheet" href="../design-system/tokens.css" />
     <link rel="stylesheet" href="../components/chrome.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -23,24 +23,15 @@
           <button class="gb-chip" type="button">New chat</button>
         </div>
       </header>
-
       <div class="gb-scroll px-4 py-4">
         <input type="search" class="gb-field mb-5" placeholder="Search chats" />
-
         <p class="gb-nav-label">Today</p>
-        <div class="relative mb-1">
-          <div class="gb-chat-row is-on">
-            <button class="gb-nav-item" type="button">Permission gate prefix</button>
-            <span class="gb-chat-meta">2m</span>
-            <button class="gb-icon is-active" type="button" aria-label="Chat options" aria-expanded="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="4" r=".75" fill="currentColor"/><circle cx="8" cy="8" r=".75" fill="currentColor"/><circle cx="8" cy="12" r=".75" fill="currentColor"/></svg>
-            </button>
-          </div>
-          <div class="gb-menu absolute right-0 top-10 z-[var(--z-popover)] w-36">
-            <button class="gb-menu-item" type="button">Open</button>
-            <button class="gb-menu-item" type="button">Rename</button>
-            <button class="gb-menu-item is-danger" type="button">Delete</button>
-          </div>
+        <div class="gb-chat-row is-on">
+          <button class="gb-nav-item" type="button">Permission gate prefix</button>
+          <span class="gb-chat-meta">2m</span>
+          <button class="gb-icon" type="button" aria-label="Chat options">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="4" r=".75" fill="currentColor"/><circle cx="8" cy="8" r=".75" fill="currentColor"/><circle cx="8" cy="12" r=".75" fill="currentColor"/></svg>
+          </button>
         </div>
         <div class="gb-chat-row">
           <button class="gb-nav-item" type="button">take time in working stage</button>
@@ -49,21 +40,21 @@
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="4" r=".75" fill="currentColor"/><circle cx="8" cy="8" r=".75" fill="currentColor"/><circle cx="8" cy="12" r=".75" fill="currentColor"/></svg>
           </button>
         </div>
-
         <p class="gb-nav-label">Yesterday</p>
         <div class="gb-chat-row">
-          <button class="gb-nav-item" type="button">Worktree apply dry-run</button>
+          <button class="gb-nav-item" type="button">Old typecheck loop</button>
           <span class="gb-chat-meta">1d</span>
           <button class="gb-icon" type="button" aria-label="Chat options">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="4" r=".75" fill="currentColor"/><circle cx="8" cy="8" r=".75" fill="currentColor"/><circle cx="8" cy="12" r=".75" fill="currentColor"/></svg>
           </button>
         </div>
-        <div class="gb-chat-row">
-          <button class="gb-nav-item" type="button">CLI missing first run</button>
-          <span class="gb-chat-meta">1d</span>
-          <button class="gb-icon" type="button" aria-label="Chat options">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="4" r=".75" fill="currentColor"/><circle cx="8" cy="8" r=".75" fill="currentColor"/><circle cx="8" cy="12" r=".75" fill="currentColor"/></svg>
-          </button>
+      </div>
+      <div class="gb-sticky-gate">
+        <p>Delete “Old typecheck loop”?</p>
+        <p style="color:var(--text)">This chat will be removed. It cannot be undone.</p>
+        <div class="gb-sticky-actions">
+          <button class="gb-btn-danger" type="button">Delete</button>
+          <button class="gb-btn" type="button">Cancel</button>
         </div>
       </div>
     </aside>

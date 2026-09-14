@@ -14,22 +14,40 @@
   <body class="gb-page">
     <nav class="gb-deck is-on">
       <a href="#" id="prev">←</a>
-      <span id="label">1 / 10 · First run</span>
+      <span id="label">1 / 28 · CLI missing</span>
       <a href="#" id="next">→</a>
     </nav>
     <iframe id="stage" title="Screen" src="screens/empty.html"></iframe>
     <script>
       var steps = [
-        ["screens/empty.html", "1 / 10 · First run"],
-        ["screens/empty-ready.html", "2 / 10 · Ready to ask"],
-        ["screens/working.html", "3 / 10 · First tools"],
-        ["screens/working-busy.html", "4 / 10 · Coding turn"],
-        ["screens/approval.html", "5 / 10 · Permissions"],
-        ["screens/diff-peek.html", "6 / 10 · Inspect edit"],
-        ["screens/terminal.html", "7 / 10 · Terminal"],
-        ["screens/composer.html", "8 / 10 · Permission menu"],
-        ["screens/question-plan.html", "9 / 10 · Question + plan"],
-        ["screens/history.html", "10 / 10 · History"]
+        ["screens/empty.html", "1 / 28 · CLI missing"],
+        ["screens/empty-auth.html", "2 / 28 · Not signed in"],
+        ["screens/empty-failed.html", "3 / 28 · Start failed"],
+        ["screens/empty-ready.html", "4 / 28 · Ready to ask"],
+        ["screens/working.html", "5 / 28 · First tools"],
+        ["screens/thinking.html", "6 / 28 · Thinking"],
+        ["screens/thinking-done.html", "7 / 28 · Thought done"],
+        ["screens/working-busy.html", "8 / 28 · Coding turn"],
+        ["screens/approval.html", "9 / 28 · Permissions"],
+        ["screens/approval-agent.html", "10 / 28 · Agent permission"],
+        ["screens/notice.html", "11 / 28 · Notices"],
+        ["screens/status-hot.html", "12 / 28 · Context hot"],
+        ["screens/composer.html", "13 / 28 · Ask menu"],
+        ["screens/composer-effort.html", "14 / 28 · Fast menu"],
+        ["screens/composer-slash.html", "15 / 28 · Slash"],
+        ["screens/slash-result.html", "16 / 28 · /context"],
+        ["screens/composer-attach.html", "17 / 28 · Attach"],
+        ["screens/composer-stopped.html", "18 / 28 · Stopped"],
+        ["screens/question-plan.html", "19 / 28 · Question"],
+        ["screens/question-multi.html", "20 / 28 · Multi-select"],
+        ["screens/proposed-plan.html", "21 / 28 · Plan proposal"],
+        ["screens/history.html", "22 / 28 · History"],
+        ["screens/history-empty.html", "23 / 28 · No chats"],
+        ["screens/rewind.html", "24 / 28 · Rewind"],
+        ["screens/rewind-confirm.html", "25 / 28 · Rewind confirm"],
+        ["screens/worktree.html", "26 / 28 · Worktree"],
+        ["screens/restart.html", "27 / 28 · Restart"],
+        ["screens/about.html", "28 / 28 · About"]
       ];
       var i = 0;
       var stage = document.getElementById("stage");

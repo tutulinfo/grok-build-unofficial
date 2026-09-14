@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thinking — Grok Build</title>
+    <link rel="stylesheet" href="../design-system/tokens.css" />
+    <link rel="stylesheet" href="../components/chrome.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="gb-page">
+    <aside class="gb-rail">
+      <header class="gb-header">
+        <div class="gb-brand">
+          <span class="gb-brand-mark" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M5 0.6 9.4 5 5 9.4 0.6 5Z" fill="currentColor"/></svg></span>
+          <span>GROK BUILD</span>
+          <span class="gb-brand-tag">unofficial</span>
+        </div>
+        <div class="gb-header-actions">
+          <button class="gb-icon" data-theme-toggle aria-label="Switch to light theme"><svg class="gb-theme-sun" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.2 3.2l1.1 1.1M11.7 11.7l1.1 1.1M3.2 12.8l1.1-1.1M11.7 4.3l1.1-1.1"/></svg><svg class="gb-theme-moon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.8 2.6a5.4 5.4 0 1 0 3.6 9.5 4.6 4.6 0 0 1-3.6-9.5z"/></svg><span class="gb-tooltip">Switch to light theme</span></button>
+          <button class="gb-icon" aria-label="New chat"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg><span class="gb-tooltip">New chat</span></button>
+          <button class="gb-icon" aria-label="Chat history"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M8 5v3.5l2 1.5"/></svg><span class="gb-tooltip">Chat history</span></button>
+          <button class="gb-icon" aria-label="Rewind"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg><span class="gb-tooltip">Rewind to an earlier prompt</span></button>
+          <button class="gb-icon is-active" aria-label="Hide thinking"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2.5 9 6l3.5.2L10 8.5 11 12 8 10l-3 2 1-3.5-2.5-2.3L7 6z"/></svg><span class="gb-tooltip">Hide thinking</span></button>
+          <button class="gb-icon" aria-label="More"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="3.5" cy="8" r=".75" fill="currentColor"/><circle cx="8" cy="8" r=".75" fill="currentColor"/><circle cx="12.5" cy="8" r=".75" fill="currentColor"/></svg><span class="gb-tooltip is-end">More</span></button>
+        </div>
+      </header>
+
+      <div class="gb-scroll px-4 py-5">
+        <p class="gb-user">Why does Always-allow forget newlines?</p>
+        <button class="gb-thought" type="button">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2.5 9 6l3.5.2L10 8.5 11 12 8 10l-3 2 1-3.5-2.5-2.3L7 6z"/></svg>
+          <span class="task-live">Thinking</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="transform:rotate(180deg)"><path d="m4 6 4 4 4-4"/></svg>
+        </button>
+        <div class="gb-md" style="font-size:var(--text-ui)">
+          <p>The gate learns one prefix per command line, but <code>commandPrefixes</code> splits on <code>&amp;&amp;</code> only, so a pasted script keeps a single key. A trailing <code>\n</code> rides along with the stored prefix, and the next plain <code>npm test</code> no longer matches it. Trimming the newline before learning would keep Always-allow alive…</p>
+        </div>
+        <details class="gb-acc">
+          <summary>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 3.5h5.5L12 6v6.5H4z"/><path d="M9.5 3.5V6H12"/></svg>
+            Read permissions.ts
+            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+          <div class="gb-clip">
+            <pre>const parts = commandPrefixes(cmd);
+for (const p of parts) this.learned.add(p.trimEnd());</pre>
+          </div>
+        </details>
+        <div class="gb-live" aria-live="polite">
+          <span class="gb-live-icons" aria-hidden="true">
+            <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 3.5h5.5L12 6v6.5H4z"/><path d="M9.5 3.5V6H12"/></svg></span>
+            <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="4"/><path d="m13 13-2.4-2.4"/></svg></span>
+            <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.5 12.5 12 4l1.5 1.5-8.5 8.5H3.5v-1.5z"/></svg></span>
+            <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2.5 9 6l3.5.2L10 8.5 11 12 8 10l-3 2 1-3.5-2.5-2.3L7 6z"/></svg></span>
+          </span>
+          <span class="gb-live-copy">
+            <span>Reading permissions.ts</span>
+            <span>Matching learned prefixes</span>
+            <span>Writing the answer</span>
+            <span>Working for 6s</span>
+          </span>
+        </div>
+      </div>
+      <p class="gb-status">working · Why does Always-allow forget newlines? · ctx 18%</p>
+      <form class="gb-composer" action="#">
+        <textarea rows="1" placeholder="Ask anything"></textarea>
+        <div class="gb-toolbar">
+          <div class="gb-toolbar-left">
+            <button type="button" class="gb-icon" aria-label="Attach image"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3.5v9M3.5 8h9"/></svg></button>
+            <button type="button" class="gb-chip gb-dd">Ask</button>
+            <button type="button" class="gb-chip gb-dd">Grok 4.6</button>
+            <button type="button" class="gb-chip gb-dd">Fast</button>
+            <button type="button" class="gb-chip">Queue</button>
+          </div>
+          <button type="button" class="gb-stop" aria-label="Stop"><span class="gb-stop-mark"></span></button>
+        </div>
+      </form>
+    </aside>
+    <script src="../components/theme.js"></script>
+  </body>
+</html>

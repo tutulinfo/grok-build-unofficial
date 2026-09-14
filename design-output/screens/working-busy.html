@@ -71,6 +71,7 @@ src/host/session.ts src/host/panel.ts src/acp/client.ts webview/App.svelte</pre>
           <summary>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="3.5" width="11" height="9" rx="1"/><path d="M5 8h2l.8 2 1.4-4 1 2h.8"/></svg>
             Running npm run smoke
+            <span class="gb-err">failed</span>
             <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
           </summary>
           <div class="gb-clip">
@@ -129,20 +130,6 @@ error Command failed with exit code 1.</pre>
           </div>
         </details>
 
-        <details class="gb-gate" open>
-          <summary>
-            Write <a class="gb-path" href="#" title="Opens in VS Code editor">src/host/permissions.ts</a>
-            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
-          </summary>
-          <div class="gb-gate-body">
-            <div class="flex flex-wrap gap-2">
-              <button class="gb-btn-primary" type="button">Apply</button>
-              <button class="gb-btn" type="button" title="Auto-approve writes this session">Accept all edits</button>
-              <button class="gb-btn-danger" type="button">Reject</button>
-            </div>
-          </div>
-        </details>
-
         <div class="gb-md">
           <p>Permission gate is real. This extension is the only ask/deny layer on <code>fs/write_text_file</code> and <code>terminal/create</code>.</p>
 
@@ -162,13 +149,21 @@ for (const pair of params.env ?? []) env[pair.name] = pair.value</pre>
         <p class="m-0 mt-6 text-[12px] text-[var(--text-faint)]">7:34 PM</p>
       </div>
 
-      <p class="gb-status">working · review the project · ctx 3% · 15.7k / 2.0m</p>
+      <div class="gb-sticky-gate">
+        <p>Write <a class="gb-path" href="#" title="Opens in VS Code editor">src/host/permissions.ts</a></p>
+        <div class="gb-sticky-actions">
+          <button class="gb-btn-primary" type="button">Apply</button>
+          <button class="gb-btn" type="button" title="Auto-approve writes this session">Accept all</button>
+          <button class="gb-btn-danger" type="button">Reject</button>
+        </div>
+      </div>
+      <p class="gb-status">waiting for you · review the project · ctx 3% · 15.7k / 2.0m</p>
       <form class="gb-composer" action="#">
         <textarea rows="1" placeholder="Ask anything"></textarea>
         <div class="gb-toolbar">
           <div class="gb-toolbar-left">
             <button type="button" class="gb-icon" aria-label="Attach image"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3.5v9M3.5 8h9"/></svg></button>
-            <button type="button" class="gb-chip gb-dd">Bypass</button>
+            <button type="button" class="gb-chip gb-dd">Ask</button>
             <button type="button" class="gb-chip gb-dd">Grok 4.6</button>
             <button type="button" class="gb-chip gb-dd">Fast</button>
             <button type="button" class="gb-chip">Queue</button>

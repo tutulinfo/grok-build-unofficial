@@ -14,46 +14,208 @@
       <h1 class="mt-3 mb-0 text-[22px] font-[400] tracking-[-0.02em]">Sidebar chat, grok.com feel</h1>
       <p class="mt-3 mb-6 text-[14px] text-[var(--text-muted)] leading-[1.65]">Unofficial VS Code client for Grok Build CLI. Features stay. Tools collapse. File names open the editor. Sun toggles light.</p>
       <p class="mb-8"><a class="gb-btn-primary inline-flex items-center no-underline" href="present.html">Presentation</a></p>
-      <ol class="m-0 p-0 list-none flex flex-col gap-5">
+
+      <h2 class="mt-0 mb-3 text-[13px] font-[500] tracking-[0.06em] uppercase text-[var(--text-faint)]">First run</h2>
+      <ol class="m-0 mb-8 p-0 list-none flex flex-col gap-4">
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/empty.html">1 · First run</a>
-          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">CLI missing. Setup card, composer disabled.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/empty.html">CLI missing</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Setup card, composer disabled.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/empty-ready.html">2 · Ready to ask</a>
-          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">CLI on PATH. Empty field, Send live.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/empty-auth.html">Not signed in</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">CLI on PATH. Sign-in card only.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/working.html">3 · First tools</a>
-          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Working for 3s. Read, edit, run. Queue + Stop.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/empty-failed.html">Start failed</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Process crash. Retry and View log.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/working-busy.html">4 · Coding turn</a>
-          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Full review: collapsed tools, terminal, diff, approvals.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/empty-starting.html">Starting</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Agent spawning. Composer disabled. Status starting…</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/approval.html">5 · Permissions</a>
-          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Write file and run command. Apply, Always allow, Reject, Never.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/empty-ready.html">Ready to ask</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Empty field, Send live.</p>
+        </li>
+      </ol>
+
+      <h2 class="mt-0 mb-3 text-[13px] font-[500] tracking-[0.06em] uppercase text-[var(--text-faint)]">Turn</h2>
+      <ol class="m-0 mb-8 p-0 list-none flex flex-col gap-4" start="5">
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/working.html">First tools</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Working for Ns. Read, edit, run. Queue + Stop.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/diff-peek.html">6 · Inspect edit</a>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/thinking.html">Thinking open</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Streaming reasoning, then a collapsed read.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/thinking-done.html">Thinking done</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Collapsed Thought row, turn footer tokens.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/working-busy.html">Coding turn</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Collapsed tools, terminal, diff, approvals.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/notice.html">Notices</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Info, context warn, grok exited error.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/latest.html">Scrolled up</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Sticky user prompt. Latest pill.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/status-hot.html">Context hot</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">ctx 91% in danger. Compact on the status line.</p>
+        </li>
+      </ol>
+
+      <h2 class="mt-0 mb-3 text-[13px] font-[500] tracking-[0.06em] uppercase text-[var(--text-faint)]">Inspect and permissions</h2>
+      <ol class="m-0 mb-8 p-0 list-none flex flex-col gap-4">
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/approval.html">Write and command</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Apply, Accept all, Run, Always allow, Reject, Never.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/approval-agent.html">Agent permission</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Allow once, Allow for session, Reject. Not Apply.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/diff-peek.html">Inspect edit</a>
           <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Inline diff. Path opens VS Code.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/terminal.html">7 · Terminal</a>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/terminal.html">Terminal</a>
           <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Typecheck open, git collapsed, smoke failed.</p>
         </li>
+      </ol>
+
+      <h2 class="mt-0 mb-3 text-[13px] font-[500] tracking-[0.06em] uppercase text-[var(--text-faint)]">Composer</h2>
+      <ol class="m-0 mb-8 p-0 list-none flex flex-col gap-4">
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/composer.html">8 · Permission menu</a>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/composer.html">Permission menu</a>
           <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Ask / Accept / Plan / Bypass. Queue banner. Overflow.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/question-plan.html">9 · Question + plan</a>
-          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Question card, Other…, plan dock 3/7.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/composer-effort.html">Effort menu</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Fast open. Auto through Heavy. ACP modeId.</p>
         </li>
         <li>
-          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/history.html">10 · History</a>
-          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Full-rail chats, rewind, worktree. Back returns to chat.</p>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/composer-model.html">Model menu</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Grok 4.6 open. Other ids closed chips stay shut.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/composer-slash.html">Slash autocomplete</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">/con. Menu above composer, not on Ask.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/slash-result.html">Slash result</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">/context modal. Used, prompt, reply, cached.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/slash-result-error.html">Slash error</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">/compact failed. Named, not a toast.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/composer-attach.html">Attachments</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Two thumbs, remove, +1 overflow.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/composer-stopped.html">Agent stopped</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Restart pill on the right. No Send.</p>
+        </li>
+      </ol>
+
+      <h2 class="mt-0 mb-3 text-[13px] font-[500] tracking-[0.06em] uppercase text-[var(--text-faint)]">Question and plan</h2>
+      <ol class="m-0 mb-8 p-0 list-none flex flex-col gap-4">
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/question-plan.html">Question 1</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Radio, Other…, plan dock 3/7.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/question-multi.html">Question 2 multi</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Checkboxes. Back, Send, Skip.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/question-answered.html">Answered</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Picks as text. Sent to Grok.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/question-skipped.html">Skipped</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Let Grok continue without answers.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/proposed-plan.html">Plan proposal</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Approve &amp; start, Request changes, Reject.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/proposed-plan-feedback.html">Request changes</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Feedback field. Send feedback.</p>
+        </li>
+      </ol>
+
+      <h2 class="mt-0 mb-3 text-[13px] font-[500] tracking-[0.06em] uppercase text-[var(--text-faint)]">History, rewind, worktree</h2>
+      <ol class="m-0 mb-8 p-0 list-none flex flex-col gap-4">
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/history.html">History</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">List. Row opens chat. ⋯ = Open, Rename, Delete.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/history-loading.html">Loading chats</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Quiet lines while sessions load.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/history-empty.html">No chats</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Empty list. New chat in the header.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/history-nomatch.html">Search miss</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Nothing matches the query.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/history-rename.html">Rename</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Input + Save / Cancel.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/history-saved.html">After save</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">New title on the current chat.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/history-delete.html">Delete</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Named confirm, sticky.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/rewind.html">Rewind</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">This chat’s prompts. Header rewind icon.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/rewind-empty.html">Rewind empty</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">No checkpoints yet.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/rewind-confirm.html">Rewind confirm</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Named drop of later prompts. Files stay.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/worktree.html">Worktree</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Git sandbox. More menu → Worktree…</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/worktree-no-git.html">No git</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Name and actions disabled.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/worktree-remove.html">Remove sandbox</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Named confirm. Unmerged work is lost.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/restart.html">Restart</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">More → Restart agent. Named confirm.</p>
+        </li>
+        <li>
+          <a class="text-[var(--accent)] no-underline hover:underline" href="screens/about.html">About</a>
+          <p class="m-0 mt-1 text-[13px] text-[var(--text-muted)]">Version, unofficial.</p>
         </li>
       </ol>
     </main>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Question and plan — Grok Build</title>
+    <title>Question multi-select — Grok Build</title>
     <link rel="stylesheet" href="../design-system/tokens.css" />
     <link rel="stylesheet" href="../components/chrome.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -18,11 +18,11 @@
         </div>
         <div class="gb-header-actions">
           <button class="gb-icon" data-theme-toggle aria-label="Switch to light theme"><svg class="gb-theme-sun" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.2 3.2l1.1 1.1M11.7 11.7l1.1 1.1M3.2 12.8l1.1-1.1M11.7 4.3l1.1-1.1"/></svg><svg class="gb-theme-moon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.8 2.6a5.4 5.4 0 1 0 3.6 9.5 4.6 4.6 0 0 1-3.6-9.5z"/></svg><span class="gb-tooltip">Switch to light theme</span></button>
-          <button class="gb-icon" title="New session" aria-label="New session"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg></button>
-          <button class="gb-icon" title="Session history" aria-label="Session history"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M8 5v3.5l2 1.5"/></svg></button>
-          <button class="gb-icon" title="Rewind to an earlier prompt" aria-label="Rewind"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></button>
-          <button class="gb-icon" title="Hide thinking" aria-label="Toggle thinking"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2.5 9 6l3.5.2L10 8.5 11 12 8 10l-3 2 1-3.5-2.5-2.3L7 6z"/></svg></button>
-          <button class="gb-icon" title="More" aria-label="More"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="3.5" cy="8" r=".75" fill="currentColor"/><circle cx="8" cy="8" r=".75" fill="currentColor"/><circle cx="12.5" cy="8" r=".75" fill="currentColor"/></svg></button>
+          <button class="gb-icon" aria-label="New chat"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M3 8h10"/></svg><span class="gb-tooltip">New chat</span></button>
+          <button class="gb-icon" aria-label="Chat history"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M8 5v3.5l2 1.5"/></svg><span class="gb-tooltip">Chat history</span></button>
+          <button class="gb-icon" aria-label="Rewind"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg><span class="gb-tooltip">Rewind to an earlier prompt</span></button>
+          <button class="gb-icon" aria-label="Hide thinking"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2.5 9 6l3.5.2L10 8.5 11 12 8 10l-3 2 1-3.5-2.5-2.3L7 6z"/></svg><span class="gb-tooltip">Hide thinking</span></button>
+          <button class="gb-icon" aria-label="More"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="3.5" cy="8" r=".75" fill="currentColor"/><circle cx="8" cy="8" r=".75" fill="currentColor"/><circle cx="12.5" cy="8" r=".75" fill="currentColor"/></svg><span class="gb-tooltip is-end">More</span></button>
         </div>
       </header>
 
@@ -31,7 +31,7 @@
         <p class="gb-msg">I need to know where learned Always-allow prefixes should live before I patch the gate.</p>
       </div>
 
-      <details class="gb-sticky-gate" open>
+      <details class="gb-sticky-gate">
         <summary class="flex items-center gap-2 text-[12px] text-[var(--text-muted)] cursor-pointer list-none">
           PLAN 3/7 · Patch checkCommand
           <svg class="gb-chevron ml-auto" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
@@ -44,38 +44,38 @@
       </details>
 
       <div class="gb-sticky-gate">
-        <p>Question 1 of 2</p>
-        <p style="color:var(--text)">Where should learned Always-allow prefixes live?</p>
+        <p>Question 2 of 2</p>
+        <p style="color:var(--text)">Which surfaces should remember Always-allow?</p>
         <label class="flex gap-2 items-start text-[12px] text-[var(--text-muted)]">
-          <input type="radio" name="q" checked />
-          <span><span style="color:var(--text)">This session only</span> — forget on restart</span>
+          <input type="checkbox" name="q2" checked style="accent-color:var(--accent)" />
+          <span><span style="color:var(--text)">Commands this session</span> — forget on restart</span>
         </label>
         <label class="flex gap-2 items-start text-[12px] text-[var(--text-muted)]">
-          <input type="radio" name="q" />
-          <span><span style="color:var(--text)">Workspace file</span> — Salim can review</span>
+          <input type="checkbox" name="q2" checked style="accent-color:var(--accent)" />
+          <span><span style="color:var(--text)">Writes this session</span> — applied edits only</span>
         </label>
         <label class="flex gap-2 items-start text-[12px] text-[var(--text-muted)]">
-          <input type="radio" name="q" />
-          <span><span style="color:var(--text)">User config.toml</span> — with MCP defaults</span>
+          <input type="checkbox" name="q2" style="accent-color:var(--accent)" />
+          <span><span style="color:var(--text)">Outside workspace</span><br /><span class="text-[11px]" style="color:var(--warning)">Remembered across sessions — review before enabling</span></span>
         </label>
         <input class="gb-field" placeholder="Other…" />
         <div class="gb-sticky-actions">
-          <button class="gb-btn" type="button" disabled>Back</button>
-          <button class="gb-btn-primary" type="button">Next</button>
+          <button class="gb-btn" type="button">Back</button>
+          <button class="gb-btn-primary" type="button">Send</button>
           <button class="gb-btn" type="button">Skip</button>
         </div>
       </div>
-      <p class="gb-status">waiting for you · Plan the prefix fix · ctx 22%</p>
+      <p class="gb-status">waiting for you · Plan the prefix fix · ctx 24% · $0.019</p>
       <form class="gb-composer" action="#">
         <textarea rows="1" placeholder="Ask anything"></textarea>
         <div class="gb-toolbar">
           <div class="gb-toolbar-left">
-            <button type="button" class="gb-icon" title="Attach image" aria-label="Attach image"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3.5v9M3.5 8h9"/></svg></button>
+            <button type="button" class="gb-icon" aria-label="Attach image"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3.5v9M3.5 8h9"/></svg></button>
             <button type="button" class="gb-chip gb-dd">Plan</button>
             <button type="button" class="gb-chip gb-dd">Grok 4.6</button>
             <button type="button" class="gb-chip gb-dd">Fast</button>
           </div>
-          <button type="button" class="gb-send" aria-label="Send" title="Send"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M8 12.5V3.5M4.5 7 8 3.5 11.5 7"/></svg></button>
+          <button type="button" class="gb-send" aria-label="Send"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M8 12.5V3.5M4.5 7 8 3.5 11.5 7"/></svg></button>
         </div>
       </form>
     </aside>

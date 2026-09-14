@@ -3,8 +3,8 @@
 - **Feel:** grok.com chat in a VS Code rail — hairline pill composer, circular Send/Stop, quiet type (Geist 400, body `--text-muted`). Not a pixel copy of grok.com or of the official Grok VS Code tab.
 - **Tools:** Claude-style accordion. Default one line. Chevron means it opens. Filename is the open-in-editor target.
 - **Features stay.** Approvals, Queue (busy only), Bypass, Always allow, rewind, worktree — restyle, don’t delete. Don’t hide chips in a gear.
-- **After Apply/Run/Reject/Never** the fat card collapses to one line (`Applied permissions.ts`, `Always allow npm test:*`). Ask-mode users will see many gates; only the current prompt stays open. History is the one-liner, chevron to peek. Accept all edits also flips the composer chip to Accept so later writes skip the card.
-- **History** is a full-width panel. A 260px drawer beside chat **breaks at ~400px**.
+- **Pending gate is a sticky bar above the composer**, not a card in the transcript. Chat only keeps one-liners after the fact (`Applied permissions.ts`). Ask-mode spam stays out of the scroll. Accept all flips the chip to Accept. Always allow is still on the command bar, not the Ask chip.
+- **History** is sessions only (clock). Rewind is the rewind icon. Worktree is More → Worktree…. Do not mix the three.
 - **Gutter:** transcript, status, composer all **16px**.
 - **Composer padding:** 12×14px, toolbar gap 10px. Do not return to a dense 4px bar.
 - **Dropdown chips:** `.gb-dd` chevron on Ask, Grok 4.6, Fast. Queue has no chevron (it’s an action).
@@ -27,8 +27,10 @@
 | `.gb-fence` | Code path bar + Copy / Apply |
 | `.gb-path` | Clickable file badge |
 | `.gb-tooltip` | Hover/focus; `.is-end` for the last header icon |
-| `.gb-menu` / `.gb-menu-item` | Ask modes and Fast modes |
+| `.gb-menu` / `.gb-menu-item` | Header More, history ⋯, Ask/Fast/slash — one shell. Danger rows use `.is-danger`. |
+| `.gb-scrim` / `.gb-dialog` | Centered named confirm (rewind). Sticky gate stays for live permissions. |
+| `.gb-restart` | Same 36px slot as Send/Stop when the agent is stopped. |
 
 ## Open in Svelte
 
-Slash autocomplete. Fast menu (canvas currently shows Ask menu on `composer.html`; Fast still needs the Auto…Heavy list). Light theme is the same screens, not duplicates.
+Light theme is the same screens, not duplicates. Fast menu is `composer-effort.html`. Slash is `composer-slash.html`.

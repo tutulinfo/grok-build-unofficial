@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Empty / first-run — Grok Build</title>
+    <title>Stopped — Grok Build</title>
     <link rel="stylesheet" href="../design-system/tokens.css" />
     <link rel="stylesheet" href="../components/chrome.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -26,36 +26,30 @@
         </div>
       </header>
 
-      <div class="gb-scroll px-4 flex flex-col">
-        <div class="flex-1"></div>
-        <p class="m-0 text-center text-[length:var(--text-display)] leading-[var(--leading-display)] tracking-[var(--tracking-display)] font-[var(--weight-regular)] text-[var(--text)]">Ask anything about this workspace</p>
-        <p class="mt-[var(--space-3)] mb-0 text-center text-[length:var(--text-meta)] text-[var(--text-muted)]">
-          <kbd class="font-[var(--font-code)]">Enter</kbd> send · <kbd class="font-[var(--font-code)]">Shift+Enter</kbd> newline
+      <div class="gb-scroll px-4 py-5">
+        <p class="gb-user">Run the smoke test.</p>
+        <p class="gb-msg">Launching the extension host for the packaged build…</p>
+        <p class="m-0 mb-5 flex items-center gap-[var(--space-2)] text-[12px] text-[var(--text-faint)]">
+          <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--danger)]"></span>
+          grok exited
         </p>
-        <div class="flex-1"></div>
-        <section class="gb-card mb-4 px-5 py-[18px]">
-          <p class="m-0 text-[length:var(--text-ui)] text-[var(--text-muted)]">Grok CLI isn’t on PATH</p>
-          <pre class="mt-[var(--space-2)] mb-[var(--space-3)] overflow-x-auto font-[var(--font-code)] text-[length:var(--text-meta)] text-[var(--text-muted)]">grok: command not found</pre>
-          <div class="flex flex-wrap gap-[var(--space-2)]">
-            <a href="https://grok.x.ai" class="gb-btn-primary inline-flex items-center no-underline">Open grok.x.ai</a>
-            <button type="button" class="gb-btn">Retry</button>
-            <button type="button" class="gb-btn">View log</button>
-          </div>
-        </section>
       </div>
 
-      <p class="gb-status">stopped · new session · grok-build-unofficial · ctx 4% · $0.000</p>
+      <p class="gb-status">stopped · grok exited · ctx 12% · $0.008</p>
 
       <form class="gb-composer" action="#">
-        <textarea rows="1" disabled placeholder="Ask anything"></textarea>
+        <textarea rows="1" placeholder="Ask anything"></textarea>
         <div class="gb-toolbar">
           <div class="gb-toolbar-left">
-            <button type="button" class="gb-icon" disabled aria-label="Attach image"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3.5v9M3.5 8h9"/></svg></button>
-            <button type="button" class="gb-chip gb-dd" disabled>Ask</button>
-            <button type="button" class="gb-chip gb-dd" disabled>Grok 4.6</button>
-            <button type="button" class="gb-chip gb-dd" disabled>Fast</button>
+            <button type="button" class="gb-icon" aria-label="Attach image"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3.5v9M3.5 8h9"/></svg></button>
+            <button type="button" class="gb-chip gb-dd">Ask</button>
+            <button type="button" class="gb-chip gb-dd">Grok 4.6</button>
+            <button type="button" class="gb-chip gb-dd">Fast</button>
           </div>
-          <button type="button" class="gb-send" disabled aria-label="Send"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M8 12.5V3.5M4.5 7 8 3.5 11.5 7"/></svg></button>
+          <button type="button" class="gb-restart" aria-label="Restart agent">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.5 8a4.5 4.5 0 1 0 1.3-3.2"/><path d="M3.5 3.5v3h3"/></svg>
+            <span class="gb-tooltip is-end">Restart agent</span>
+          </button>
         </div>
       </form>
     </aside>

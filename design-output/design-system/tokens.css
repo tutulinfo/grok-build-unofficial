@@ -154,6 +154,7 @@
   --success: var(--primitive-green-500);     /* duration timestamps may use */
   --warning: var(--primitive-amber-500);
   --danger: var(--primitive-red-500);        /* Stop */
+  --scrim: rgba(0, 0, 0, 0.55);              /* slash-result overlay */
 
   --diff-add-bg: var(--primitive-diff-add-bg);
   --diff-add-text: var(--primitive-diff-add-text);
@@ -290,6 +291,7 @@
   --success: var(--primitive-lt-green-600);
   --warning: var(--primitive-lt-amber-700);
   --danger: var(--primitive-lt-red-600);
+  --scrim: rgba(26, 26, 28, 0.45);
 
   --diff-add-bg: var(--primitive-lt-diff-add-bg);
   --diff-add-text: var(--primitive-lt-diff-add-text);

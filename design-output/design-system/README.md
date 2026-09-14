@@ -44,10 +44,10 @@ Do not make every gap 8px.
 
 ## Radius
 
-- `--radius-sm` 8px — chips, icon buttons, toolbar controls, buttons
-- `--radius-md` 12px — cards, approval, questions
-- `--radius-lg` 16px — composer shell only
-- `--radius-pill` 999px — unofficial tag and status dots only, never a general button shape
+- `--radius-sm` 8px — icon buttons, small chips inside tool rows
+- `--radius-md` 12px — menus, code fences, clip boxes
+- `--radius-lg` 28px — composer shell and raised cards (grok.com pill)
+- `--radius-pill` 999px — Ask/model/Fast chips, `.gb-btn*` pills, Send/Stop circles, unofficial tag
 
 ## Icons
 
@@ -59,9 +59,10 @@ Do not make every gap 8px.
 
 ## Buttons (tokens only, no component HTML here)
 
-- Primary (Send): filled `--accent`, `--radius-sm`, visible word label — `--btn-primary-*`.
-- Secondary: ghost over hairline `--border-strong` — `--btn-secondary-*`.
-- Danger (Stop): `--danger` ghost with a subtle danger hairline — `--btn-danger-*`.
+- Primary (Send): 36px circle, filled `--accent`. Word pills (Approve, Retry) use `--radius-pill` and `--btn-primary-*`.
+- Secondary: inset pill `--bg-inset`, not an outline rectangle — `--btn-secondary-*`.
+- Danger: text `--danger` on a pill, no fill until hover — `--btn-danger-*`.
+- Sticky gate actions must still meet `--btn-min-tap` 32px.
 - Focus: 2px accent ring as outline — `outline: var(--focus-ring-width) solid var(--focus); outline-offset: var(--focus-ring-offset);` never the browser default, never a shadow.
 - Disabled: `opacity: var(--btn-disabled-opacity)` + `pointer-events: none` + `cursor: var(--btn-disabled-cursor)` — must remain visible.
 - Icon buttons in the rail: 32px minimum tap target (`--btn-min-tap`).
@@ -78,5 +79,6 @@ Do not make every gap 8px.
 - No Universal Sans, no `cdn.grok.com` font URLs, no Inter / Poppins / Manrope / Satoshi / DM Sans / Space Grotesk.
 - No x.ai marketing pills, gradient chips, glow, or shadows.
 - No fake IDE in the sidebar: no tab bars, file explorers, or embedded terminals; no unrelated grok.com product furniture (Voice, Imagine).
-- No 999px pills on ordinary buttons, no 600+ weights, no colors or fonts outside the token layers.
+- No x.ai marketing gradient pills. Composer/chip pills are the locked grok.com chat shape, not a marketing treatment.
+- No 600+ weights, no colors or fonts outside the token layers.
 - Do not hide inventory controls.

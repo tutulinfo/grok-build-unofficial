@@ -68,41 +68,25 @@
           </div>
         </details>
 
-        <details class="gb-gate" open>
-          <summary>
-            Write <a class="gb-path" href="#" title="Opens in VS Code editor">src/host/permissions.ts</a>
-            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
-          </summary>
-          <div class="gb-gate-body">
-            <div class="gb-clip">
-              <pre><span class="gb-diff-del">-    return this.ask(cmd);</span>
-<span class="gb-diff-add">+    const prefix = commandPrefix(cmd);</span></pre>
-            </div>
-            <div class="flex flex-wrap gap-2 mt-3">
-              <button class="gb-btn-primary" type="button">Apply</button>
-              <button class="gb-btn" type="button" title="Auto-approve writes this session">Accept all edits</button>
-              <button class="gb-btn-danger" type="button">Reject</button>
-            </div>
-          </div>
-        </details>
-
-        <details class="gb-gate" open>
-          <summary>
-            Run <span class="font-[var(--font-code)] text-[12px]">npm test --filter permissions</span>
-            <svg class="gb-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m4 6 4 4 4-4"/></svg>
-          </summary>
-          <div class="gb-gate-body">
-            <p class="m-0 mb-3 text-[12px] text-[var(--text-muted)] font-[var(--font-code)]">D:\projects\grok-build-unofficial</p>
-            <div class="flex flex-wrap gap-2">
-              <button class="gb-btn-primary" type="button">Run</button>
-              <button class="gb-btn" type="button" title="Bash(npm test:*)">Always allow</button>
-              <button class="gb-btn-danger" type="button">Reject</button>
-              <button class="gb-btn" type="button">Never</button>
-            </div>
-          </div>
-        </details>
       </div>
 
+      <div class="gb-sticky-gate">
+        <p>Write <a class="gb-path" href="#" title="Opens in VS Code editor">src/host/permissions.ts</a></p>
+        <div class="gb-sticky-actions">
+          <button class="gb-btn-primary" type="button">Apply</button>
+          <button class="gb-btn" type="button" title="Auto-approve writes this session">Accept all</button>
+          <button class="gb-btn-danger" type="button">Reject</button>
+        </div>
+      </div>
+      <div class="gb-sticky-gate">
+        <p>Run <span class="font-[var(--font-code)]">npm test --filter permissions</span></p>
+        <div class="gb-sticky-actions">
+          <button class="gb-btn-primary" type="button">Run</button>
+          <button class="gb-btn" type="button" title="Bash(npm test:*)">Always allow</button>
+          <button class="gb-btn-danger" type="button">Reject</button>
+          <button class="gb-btn" type="button">Never</button>
+        </div>
+      </div>
       <p class="gb-status">waiting for you · Permission gate prefix · ctx 38% · $0.051</p>
       <form class="gb-composer" action="#">
         <textarea rows="1" placeholder="Ask anything"></textarea>
